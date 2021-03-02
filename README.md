@@ -1,4 +1,4 @@
-# Data Structures and Algorithms in Python
+# DSA in Python
 
 It's a space for personal practice. 
 
