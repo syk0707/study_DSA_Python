@@ -16,10 +16,10 @@ I ask for your understanding even if there are many shortcomings.
 
 ###### Data Structures
 
-[Hash table]: data_structure/hash_table.py
-[One Dimensional Array]: data_structure/one_dimensional_array.py
-[Linked List]: data_structure/linked_list.py
-[Time Complexity]: data_structure/time_complexity.py
+[Hash table](data_structure/hash_table.py)	"Hash Table"
+[One Dimensional Array](data_structure/one_dimensional_array.py)	"One Dimensional Array"
+[Linked List](data_structure/linked_list.py)	"Linked List"
+[Time Complexity](data_structure/time_complexity.py)	"Time Complexity"
 
 
 
