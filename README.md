@@ -25,3 +25,5 @@ I ask for your understanding even if there are many shortcomings.
 
 
 ###### Algorithms
+
+[Prime number and Geometric](algorithm/prime_number_geometric.py)
