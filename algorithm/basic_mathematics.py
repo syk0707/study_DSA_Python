@@ -35,7 +35,7 @@ def find_fractional_numbers():
         increase_num += 1
         count += 1
     last_num = total
-    #1 - 분자 우선, 2 - 분모가 분자보다 큼, 3 - 분자가 분모보다 큼
+    #1 - numerator is larger than denominator, 2 - denominator is larger than numerator
     numerator = 0
     denominator = 0
     diff_num = last_num - check_num
