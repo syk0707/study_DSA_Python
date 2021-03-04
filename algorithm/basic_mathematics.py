@@ -1,3 +1,4 @@
+import math
 # It costs a fixed cost of A dollars, and it is said that producing a single product costs a total of B dollars, including material costs and labor costs. 
 # If the price of the item is set at C dollars, find a break-even point.
 def break_even_point():
@@ -51,7 +52,20 @@ def find_fractional_numbers():
     #above python 3.6
     print(f'{numerator}/{denominator}')
 
+# I can go up A meter during the day. However, it slips B meters while sleeping at night.
+# Also, it does not slip after climbing to the top. How many days will it take to get up?
+def cal_climb():
+    input_arr = list(map(int, input().split()))
+    up_meter = input_arr[0]
+    down_meter = input_arr[1]
+    up_day_meter = up_meter - down_meter
+    total_meter = input_arr[2] - down_meter
+    total_day = total_meter / up_day_meter
+    #math.ceil : Round up, math.floor : Round down, math.round
+    print(math.ceil(total_day))
+
 if __name__ == "__main__":
     #break_even_point()
     #check_num()
-    find_fractional_numbers()
+    #find_fractional_numbers()
+    cal_climb()
