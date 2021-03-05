@@ -64,8 +64,26 @@ def cal_climb():
     #math.ceil : Round up, math.floor : Round down, math.round
     print(math.ceil(total_day))
 
+def find_floor():
+    total_length = int(input())
+    str_array = []
+    for idx in range(total_length):
+        hotel_arr = list(map(int, input().split()))
+        height = hotel_arr[0]
+        arrival_number = hotel_arr[2]          
+        # top floor
+        if(arrival_number % height == 0):
+            room_num = int(arrival_number / height)
+            str_array.append(f'{height}{room_num if room_num >= 10 else "0" + str(room_num)}')
+        else:
+            room_num = int(arrival_number / height) + 1
+            str_array.append(f'{arrival_number % height}{room_num if room_num >= 10 else "0" + str(room_num)}')
+    for string in str_array:
+        print(string)
+
 if __name__ == "__main__":
     #break_even_point()
     #check_num()
     #find_fractional_numbers()
-    cal_climb()
+    #cal_climb()
+    find_floor()
