@@ -14,14 +14,15 @@ I ask for your understanding even if there are many shortcomings.
 
 ###### Data Structures
 
+[Linked List](data_structure/linked_list.py)
+
 [Hash table](data_structure/hash_table.py)
 
 [One Dimensional Array](data_structure/one_dimensional_array.py)
 
-[Linked List](data_structure/linked_list.py)
-
 [Time Complexity](data_structure/time_complexity.py)
 
+[Tree](data_structure/tree.py)
 
 
 ###### Algorithms
