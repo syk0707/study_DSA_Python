@@ -36,6 +36,42 @@ class NodeMgmt:
                 self.current_node = self.current_node.right
         return False
 
+    def delete(self, value):
+        searched = False
+        self.current_node = self.head
+        self.parent = self.head
+        while self.current_node:
+            if self.current_node.value == value:
+                searched = True
+                break
+            elif value < self.current_node.value:
+                self.parent = self.current_node
+                self.current_node = self.current_node.left
+            else:
+                self.parent = self.current_node
+                self.current_node = self.current_node.right
+
+        if not searched:
+            return False
+
+        if self.current_node.left is None and self.current_node.right is None:
+            if value < self.parent.value:
+                self.parent.left = None
+            else:
+                self.parent.right = None
+            del self.current_node
+        elif self.current_node.left is not None and self.current_node.right is None:
+            if value < self.parent.value:
+                self.parent.left = self.current_node.left
+            else:
+                self.parent.right = self.current_node.left
+        elif self.current_node.left is None and self.current_node.right is not None:
+            if value < self.parent.value:
+                self.parent.left = self.current_node.right
+            else:
+                self.parent.right = self.current_node.right
+
+
 
 head = Node(1)
 BST = NodeMgmt(head)
@@ -46,3 +82,5 @@ BST.insert(4)
 BST.insert(8)
 print(BST.search(3))
 print(BST.search(-1))
+print(BST.delete(3))
+print(BST.search(3))

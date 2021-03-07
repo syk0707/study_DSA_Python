@@ -96,8 +96,14 @@ def print_resident():
     for idx in range(total_items * 2):
         num = int(input())
         input_arr.append(num)
-    print(input_arr)
-
+    for arr_idx in range(0, int(len(input_arr)/2)):
+        total_floor = input_arr[arr_idx * 2]
+        total_arc = input_arr[arr_idx * 2 + 1]
+        floor_list = [floor for floor in range(1, total_arc + 1)]
+        for floor in range(total_floor):
+            for arc in range(1, total_arc):
+                floor_list[arc] += floor_list[arc - 1]
+        print(floor_list[total_arc - 1])
 
 def cal_large_num():
     cal_arr = list(map(int, input().split()))
@@ -117,7 +123,7 @@ def cal_reminder():
             cnt = -1
             break
     print(cnt)
-        
+
 
 if __name__ == "__main__":
     # break_even_point()
@@ -125,6 +131,6 @@ if __name__ == "__main__":
     # find_fractional_numbers()
     # cal_climb()
     # find_floor()
-    #cal_large_num()
-    cal_reminder()
-    # print_resident()
+    # cal_large_num()
+    # cal_reminder()
+    print_resident()
