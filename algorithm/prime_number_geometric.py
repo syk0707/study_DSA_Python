@@ -6,10 +6,9 @@ def check_prime_number(num):
         divide_num = idx + 1
         if divide_num == 1:
             continue
-        else:
-            if num % divide_num == 0:
-                return False
-    return True
+        elif num % divide_num == 0:
+            return False
+    print(num)
 
 # Write a program that finds and prints how many of the given N are.
 def find_prime_number():
@@ -39,6 +38,34 @@ def find_prime_number_array():
         print(total_num)
     print(minimum_num)
 
+def factorization():
+    num = int(input())
+    divide_num_array = []
+    divide_num = 2
+    while True:
+        if num % divide_num == 0:
+            num = num / divide_num
+            divide_num_array.append(divide_num)
+            divide_num = 2
+        else:
+            divide_num += 1
+        if num == 1:
+            break
+    for num in divide_num_array:
+        print(num)
+
+def find_prime_number_range():
+    num_input_arr = list(map(int, input().split()))
+    ret_arr = []
+    num_arr = list(range(num_input_arr[0], num_input_arr[1] + 1))
+    for num in range(num_input_arr[0], num_input_arr[1] + 1):
+        is_prime_num = check_prime_number(num)
+        if is_prime_num:
+            ret_arr.append(num)
+
+
 if __name__ == "__main__":
     #find_prime_number()
-    find_prime_number_array()
+    #find_prime_number_array()
+    #factorization()
+    find_prime_number_range()
