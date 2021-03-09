@@ -54,6 +54,21 @@ def factorization():
     for num in divide_num_array:
         print(num)
 
+def short_distance_rectangular():
+    input_arr = list(map(int, input().split()))
+    x = input_arr[0]
+    y = input_arr[1]
+    max_w = input_arr[2]
+    max_h = input_arr[3]
+    short_distance = x
+    if y < x:
+        short_distance = y
+    if short_distance > (max_w - x):
+        short_distance = max_w - x
+    if short_distance > (max_h - y):
+        short_distance = max_h - y
+    print(short_distance)
+
 def find_prime_number_range():
     num_input_arr = list(map(int, input().split()))
     ret_arr = []
@@ -68,4 +83,5 @@ if __name__ == "__main__":
     #find_prime_number()
     #find_prime_number_array()
     #factorization()
-    find_prime_number_range()
+    short_distance_rectangular()
+    #find_prime_number_range()
