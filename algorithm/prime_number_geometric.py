@@ -78,10 +78,61 @@ def find_prime_number_range():
         if is_prime_num:
             ret_arr.append(num)
 
+def find_coordinate_rectangle():
+    x_coordinate = {}
+    y_coordinate = {}
+    for idx in range(3):
+        input_arr = list(map(int, input().split()))
+        if x_coordinate.get(input_arr[0]) is None:
+            x_coordinate[input_arr[0]] = 1
+        else:
+            x_coordinate[input_arr[0]] += 1
+        if y_coordinate.get(input_arr[1]) is None:
+            y_coordinate[input_arr[1]] = 1
+        else:
+            y_coordinate[input_arr[1]] += 1
+    x = 0
+    y = 0
+    for each_x in x_coordinate.keys():
+        if(x_coordinate[each_x] == 1):
+            x = each_x
+    for each_y in y_coordinate.keys():
+        if(y_coordinate[each_y] == 1):
+            y = each_y
+    print(f"{x} {y}")
+
+def check_right_triangle():
+    ret_arr = []
+    while True:
+        input_arr = list(map(int, input().split()))
+        if (input_arr[0] == 0 and input_arr[1] == 0 and input_arr[2] == 0):
+            break
+        large_num = input_arr[0]
+        check_num_1 = 0
+        check_num_2 = 0
+        if(large_num < input_arr[1]):
+            check_num_1 = large_num
+            large_num = input_arr[1]
+        else:
+            check_num_1 = input_arr[1]
+        if(large_num < input_arr[2]):
+            check_num_2 = large_num
+            large_num = input_arr[2]
+        else:
+            check_num_2 = input_arr[2]
+        if check_num_1 ** 2 + check_num_2 ** 2 == large_num ** 2:
+            ret_arr.append('right')
+        else:
+            ret_arr.append('wrong')
+    for ret_val in ret_arr:
+        print(ret_val)
+        
 
 if __name__ == "__main__":
     #find_prime_number()
     #find_prime_number_array()
     #factorization()
-    short_distance_rectangular()
+    #short_distance_rectangular()
     #find_prime_number_range()
+    #find_coordinate_rectangle()
+    check_right_triangle()
