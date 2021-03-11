@@ -30,3 +30,5 @@ I ask for your understanding even if there are many shortcomings.
 [Basic Mathematics](algorithm/basic_mathematics.py)
 
 [Prime number and Geometric](algorithm/prime_number_geometric.py)
+
+[Sort](algorithm/sort.py)
