@@ -125,6 +125,27 @@ def cal_reminder():
     print(cnt)
 
 
+def cal_distance_move():
+    total_cnt = int(input())
+    ans = 0
+    diff = 1
+    cnt = 0
+    result_obj = {}
+    while True:
+        ans += diff
+        diff += 1
+        cnt += 1
+        result_obj[ans] = cnt
+        if ans > 2**31:
+            break
+    print(result_obj)
+    for cnt in range(total_cnt):
+        ret_val = 0
+        dist_coordinates = list(map(int, input()))
+        total_dist = dist_coordinates[0] - dist_coordinates[1] - 1
+        print(result_obj[total_dist] + 1)
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -133,4 +154,5 @@ if __name__ == "__main__":
     # find_floor()
     # cal_large_num()
     # cal_reminder()
-    print_resident()
+    # print_resident()
+    cal_distance_move()

@@ -1,3 +1,5 @@
+import math 
+
 # check prime number
 def check_prime_number(num):
     if num == 1:
@@ -10,6 +12,7 @@ def check_prime_number(num):
             return False
     print(num)
 
+
 # Write a program that finds and prints how many of the given N are.
 def find_prime_number():
     check_length = int(input())
@@ -21,7 +24,9 @@ def find_prime_number():
             prime_num += 1
     print(prime_num)
 
-# When given natural numbers M and N, write a program to find the sum and minimum of these few numbers by selecting all the natural numbers above M and below N.
+
+# When given natural numbers M and N, write a program
+# to find the sum and minimum of these few numbers by selecting all the natural numbers above M and below N.
 def find_prime_number_array():
     start_num = int(input())
     end_num = int(input()) + 1
@@ -37,6 +42,7 @@ def find_prime_number_array():
     if minimum_num != -1:
         print(total_num)
     print(minimum_num)
+
 
 def factorization():
     num = int(input())
@@ -54,6 +60,7 @@ def factorization():
     for num in divide_num_array:
         print(num)
 
+
 def short_distance_rectangular():
     input_arr = list(map(int, input().split()))
     x = input_arr[0]
@@ -69,6 +76,7 @@ def short_distance_rectangular():
         short_distance = max_h - y
     print(short_distance)
 
+
 def find_prime_number_range():
     num_input_arr = list(map(int, input().split()))
     ret_arr = []
@@ -77,6 +85,7 @@ def find_prime_number_range():
         is_prime_num = check_prime_number(num)
         if is_prime_num:
             ret_arr.append(num)
+
 
 def find_coordinate_rectangle():
     x_coordinate = {}
@@ -100,6 +109,7 @@ def find_coordinate_rectangle():
         if(y_coordinate[each_y] == 1):
             y = each_y
     print(f"{x} {y}")
+
 
 def check_right_triangle():
     ret_arr = []
@@ -126,7 +136,33 @@ def check_right_triangle():
             ret_arr.append('wrong')
     for ret_val in ret_arr:
         print(ret_val)
-        
+
+
+def calculate_circle_area():
+    radius = int(input())
+    circle_euclidean = radius ** 2 * math.pi 
+    circle_taxi = (radius * 2) * radius
+    print('%.6f' % circle_euclidean)
+    print('%.6f' % circle_taxi)
+
+
+def find_prime_number_eratosthenes():
+    check_obj = {}
+    check_prime_num_arr = list(map(int, input().split()))
+    for i in range(2, check_prime_num_arr[1] + 1):
+        check_obj[i] = True
+    max_check_num = int(check_prime_num_arr[1] ** 0.5)
+    for j in range(2, max_check_num + 1):
+        if check_obj.get(j) is True:
+            for k in range(j + j, check_prime_num_arr[1] + 1, j):
+                check_obj[k] = False
+    minimum_num = check_prime_num_arr[0]
+    for key in check_obj:
+        if minimum_num > key:
+            continue
+        check_val = check_obj[key]
+        if check_val is True:
+            print(key)
 
 if __name__ == "__main__":
     #find_prime_number()
@@ -135,4 +171,6 @@ if __name__ == "__main__":
     #short_distance_rectangular()
     #find_prime_number_range()
     #find_coordinate_rectangle()
-    check_right_triangle()
+    #check_right_triangle()
+    #calculate_circle_area()
+    find_prime_number_eratosthenes()
