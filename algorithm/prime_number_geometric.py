@@ -1,4 +1,5 @@
-import math 
+import math
+
 
 # check prime number
 def check_prime_number(num):
@@ -34,7 +35,7 @@ def find_prime_number_array():
     total_num = 0
     for idx in range(start_num, end_num):
         is_prime_num = check_prime_number(idx)
-        if is_prime_num is True and minimum_num == -1: 
+        if is_prime_num is True and minimum_num == -1:
             minimum_num = idx
             total_num += idx
         elif is_prime_num is True:
@@ -103,10 +104,10 @@ def find_coordinate_rectangle():
     x = 0
     y = 0
     for each_x in x_coordinate.keys():
-        if(x_coordinate[each_x] == 1):
+        if (x_coordinate[each_x] == 1):
             x = each_x
     for each_y in y_coordinate.keys():
-        if(y_coordinate[each_y] == 1):
+        if (y_coordinate[each_y] == 1):
             y = each_y
     print(f"{x} {y}")
 
@@ -120,12 +121,12 @@ def check_right_triangle():
         large_num = input_arr[0]
         check_num_1 = 0
         check_num_2 = 0
-        if(large_num < input_arr[1]):
+        if (large_num < input_arr[1]):
             check_num_1 = large_num
             large_num = input_arr[1]
         else:
             check_num_1 = input_arr[1]
-        if(large_num < input_arr[2]):
+        if (large_num < input_arr[2]):
             check_num_2 = large_num
             large_num = input_arr[2]
         else:
@@ -140,7 +141,7 @@ def check_right_triangle():
 
 def calculate_circle_area():
     radius = int(input())
-    circle_euclidean = radius ** 2 * math.pi 
+    circle_euclidean = radius ** 2 * math.pi
     circle_taxi = (radius * 2) * radius
     print('%.6f' % circle_euclidean)
     print('%.6f' % circle_taxi)
@@ -164,13 +165,43 @@ def find_prime_number_eratosthenes():
         if check_val is True:
             print(key)
 
+
+def find_prime_num_cnt(num, chk_obj):
+    ret_val = 0
+    for chk_num in range(num + 1, num * 2 + 1):
+        check_val = chk_obj[chk_num]
+        if check_val is True:
+            ret_val += 1
+    return ret_val
+
+
+def find_prime_num_bertrand():
+    check_arr = []
+    check_obj = {1: False}
+    for i in range(2, 123456 * 2 + 1):
+        check_obj[i] = True
+    max_check_num = int((123456 * 2 + 1) ** 0.5)
+    for j in range(2, max_check_num + 1):
+        if check_obj.get(j) is True:
+            for k in range(j + j, 123456 * 2 + 1, j):
+                check_obj[k] = False
+    while True:
+        input_val = int(input())
+        if input_val == 0:
+            break
+        check_arr.append(input_val)
+    for check_val in check_arr:
+        print(find_prime_num_cnt(check_val, check_obj))
+
+
 if __name__ == "__main__":
-    #find_prime_number()
-    #find_prime_number_array()
-    #factorization()
-    #short_distance_rectangular()
-    #find_prime_number_range()
-    #find_coordinate_rectangle()
-    #check_right_triangle()
-    #calculate_circle_area()
-    find_prime_number_eratosthenes()
+    # find_prime_number()
+    # find_prime_number_array()
+    # factorization()
+    # short_distance_rectangular()
+    # find_prime_number_range()
+    # find_coordinate_rectangle()
+    # check_right_triangle()
+    # calculate_circle_area()
+    # find_prime_number_eratosthenes()
+    find_prime_num_bertrand()
