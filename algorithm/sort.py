@@ -29,6 +29,19 @@ def bubble_sort():
     print(data_list)
 
 
+def insertion_sort():
+    data_list = random.sample(range(100), 50)
+    print(data_list)
+    for idx in range(len(data_list) - 1):
+        for idx2 in range(idx + 1, 0, -1):
+            if data_list[idx2] < data_list[idx2 - 1]:
+                data_list[idx2], data_list[idx2 - 1] = data_list[idx2 - 1], data_list[idx2]
+            else:
+                break
+    print(data_list)
+
+
 if __name__ == "__main__":
     # array_num()
-    bubble_sort()
+    # bubble_sort()
+    insertion_sort()
