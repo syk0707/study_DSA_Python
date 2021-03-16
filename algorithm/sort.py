@@ -1,5 +1,6 @@
 import random
 
+
 def array_num():
     total_num = int(input())
     total_obj = {}
@@ -26,6 +27,7 @@ def bubble_sort():
         if swap is False:
             break
     print(data_list)
+
 
 if __name__ == "__main__":
     # array_num()
