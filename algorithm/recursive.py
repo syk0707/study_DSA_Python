@@ -1,3 +1,5 @@
+import random
+
 def factorial(n):
     fac = 1
     for idx in range(2, n+1):
@@ -12,6 +14,53 @@ def factorial2(n):
         return 1
 
 
+def sum_item(data):
+    if len(data) <= 1:
+        return data[0]
+    return data[0] + sum_item(data[1:])
+
+
+def sum_list():
+    list_item = random.sample(range(100), 10)
+    print(list_item)
+    print(sum_item(list_item))
+
+
+def palindrome(chk_str):
+    if len(chk_str) <= 1:
+        return True
+    if chk_str[0] == chk_str[-1]:
+        return palindrome(chk_str[1:-1])
+    else:
+        return False
+
+
+def func(n):
+    print(n)
+    if n == 1:
+        return n
+    if n % 2 == 1:
+        return func((3 * n) + 1)
+    else:
+        return func(int(n/2))
+
+
+def func2(data):
+    if data == 1:
+        return 1
+    elif data == 2:
+        return 2
+    elif data == 3:
+        return 4
+
+    return func2(data - 1) + func2(data - 2) + func2(data - 3)
+
+
 if __name__ == "__main__":
-    print(factorial(10))
-    print(factorial2(10))
+    # print(factorial(10))
+    # print(factorial2(10))
+    # sum_list()
+    # print(palindrome("test"))
+    # func(3)
+    print(func2(5))
+    
