@@ -1,6 +1,7 @@
 import math
 import sys
 
+
 # It costs a fixed cost of A dollars, and it is said that producing a single product costs a total of B dollars,
 # including material costs and labor costs.
 # If the price of the item is set at C dollars, find a break-even point.
@@ -161,6 +162,24 @@ def divide_num_1271():
     print(divide_arr[0] % divide_arr[1])
 
 
+# After receiving two integers A and B, write a program that outputs A+B.
+def addition_2558():
+    add_num_1 = int(sys.stdin.readline())
+    add_num_2 = int(sys.stdin.readline())
+    print(add_num_1 + add_num_2)
+
+
+# Output the average score of 5 students
+def cal_average_10039():
+    total_score = 0
+    for idx in range(5):
+        chk_num = int(sys.stdin.readline())
+        if chk_num < 40:
+            chk_num = 40
+        total_score += chk_num
+    print(int(total_score / 5))
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -171,5 +190,7 @@ if __name__ == "__main__":
     # cal_reminder()
     # print_resident()
     # cal_distance_move()
-    divide_num_1312()
+    # divide_num_1312()
     # divide_num_1271()
+    # addition_2558()
+    cal_average_10039()
