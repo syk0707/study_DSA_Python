@@ -1,4 +1,5 @@
 import random
+import sys
 
 def factorial(n):
     fac = 1
@@ -56,11 +57,25 @@ def func2(data):
     return func2(data - 1) + func2(data - 2) + func2(data - 3)
 
 
+def chk_binary(num, binary_arr):
+    if num == 0:
+        for binary_num in range(len(binary_arr), 0, -1):
+            print(binary_arr[binary_num - 1], end="")
+    else:
+        binary_arr.append(num % 2)
+        chk_binary(num // 2, binary_arr)
+
+
+def convert_binary():
+    num = int(sys.stdin.readline())
+    chk_binary(num, [])
+
+
 if __name__ == "__main__":
     # print(factorial(10))
     # print(factorial2(10))
     # sum_list()
     # print(palindrome("test"))
     # func(3)
-    print(func2(5))
-    
+    # print(func2(5))
+    convert_binary()
