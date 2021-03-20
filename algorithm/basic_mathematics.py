@@ -1,4 +1,5 @@
 import math
+import sys
 
 
 # It costs a fixed cost of A dollars, and it is said that producing a single product costs a total of B dollars,
@@ -96,7 +97,7 @@ def print_resident():
     for idx in range(total_items * 2):
         num = int(input())
         input_arr.append(num)
-    for arr_idx in range(0, int(len(input_arr)/2)):
+    for arr_idx in range(0, int(len(input_arr) / 2)):
         total_floor = input_arr[arr_idx * 2]
         total_arc = input_arr[arr_idx * 2 + 1]
         floor_list = [floor for floor in range(1, total_arc + 1)]
@@ -104,6 +105,7 @@ def print_resident():
             for arc in range(1, total_arc):
                 floor_list[arc] += floor_list[arc - 1]
         print(floor_list[total_arc - 1])
+
 
 def cal_large_num():
     cal_arr = list(map(int, input().split()))
@@ -136,7 +138,7 @@ def cal_distance_move():
         diff += 1
         cnt += 1
         result_obj[ans] = cnt
-        if ans > 2**31:
+        if ans > 2 ** 31:
             break
     print(result_obj)
     for cnt in range(total_cnt):
@@ -144,6 +146,38 @@ def cal_distance_move():
         dist_coordinates = list(map(int, input()))
         total_dist = dist_coordinates[0] - dist_coordinates[1] - 1
         print(result_obj[total_dist] + 1)
+
+
+def divide_num_1312():
+    divide_arr = list(map(int, sys.stdin.readline().split()))
+    divide_arr[0] = divide_arr[0] % divide_arr[1]
+    for idx in range(divide_arr[2] - 1):
+        divide_arr[0] = (divide_arr[0] * 10) % divide_arr[1]
+    print((divide_arr[0] * 10) // divide_arr[1])
+
+
+def divide_num_1271():
+    divide_arr = list(map(int, sys.stdin.readline().split()))
+    print(divide_arr[0] // divide_arr[1])
+    print(divide_arr[0] % divide_arr[1])
+
+
+# After receiving two integers A and B, write a program that outputs A+B.
+def addition_2558():
+    add_num_1 = int(sys.stdin.readline())
+    add_num_2 = int(sys.stdin.readline())
+    print(add_num_1 + add_num_2)
+
+
+# Output the average score of 5 students
+def cal_average_10039():
+    total_score = 0
+    for idx in range(5):
+        chk_num = int(sys.stdin.readline())
+        if chk_num < 40:
+            chk_num = 40
+        total_score += chk_num
+    print(int(total_score / 5))
 
 
 if __name__ == "__main__":
@@ -155,4 +189,8 @@ if __name__ == "__main__":
     # cal_large_num()
     # cal_reminder()
     # print_resident()
-    cal_distance_move()
+    # cal_distance_move()
+    # divide_num_1312()
+    # divide_num_1271()
+    # addition_2558()
+    cal_average_10039()

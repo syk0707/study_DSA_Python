@@ -25,10 +25,15 @@ I ask for your understanding even if there are many shortcomings.
 [Tree](data_structure/tree.py)
 
 
+
 ###### Algorithms
 
 [Basic Mathematics](algorithm/basic_mathematics.py)
 
 [Prime number and Geometric](algorithm/prime_number_geometric.py)
+
+[Recursive](algorithm/recursive.py)
+
+[Stack](algorithm/stack.py)
 
 [Sort](algorithm/sort.py)
