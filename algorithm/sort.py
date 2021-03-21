@@ -1,5 +1,6 @@
-import random
 import sys
+from collections import deque
+import random
 
 
 def array_num():
@@ -28,6 +29,19 @@ def bubble_sort():
         if swap is False:
             break
     print(data_list)
+
+
+def array_num_2():
+    total_arr = []
+    total_num = int(sys.stdin.readline())
+    for total_idx in range(total_num):
+        num = int(sys.stdin.readline())
+        total_arr.append(num)
+    nl = "\n"
+    total_deque = deque(total_arr)
+    while total_deque:
+        sys.stdout.write(f"{total_deque}{nl}")
+        total_deque.pop()
 
 
 def insertion_sort():
@@ -108,16 +122,48 @@ def split(data):
     print(left, right)
 
 
-def merge_sort():
-    print('merge')
+def merge(left, right):
+    merged = list()
+    left_point, right_point = 0, 0
+    # case 1 - left, right remain
+    while len(left) > left_point and len(right) > right_point:
+        if left[left_point] > right[right_point]:
+            merged.append(right[right_point])
+            right_point += 1
+        else:
+            merged.append(left[left_point])
+            left_point += 1
+    # case 2 - only left remain
+    while len(left) > left_point:
+        merged.append(left[left_point])
+        left_point += 1
+    # case 3 - only right remain
+    while len(right) > right_point:
+        merged.append(right[right_point])
+        right_point += 1
+
+    return merged
+
+
+def merge_sort(data):
+    if len(data) <= 1:
+        return data
+    medium = int(len(data) / 2)
+    left = merge_sort(data[:medium])
+    right = merge_sort(data[medium:])
+    return merge(left, right)
 
 
 if __name__ == "__main__":
+    random_list = random.sample(range(100), 10)
     # array_num()
     # bubble_sort()
     # insertion_sort()
-    random_list = random.sample(range(100), 10)
     # print(quick_sort_example(random_list))
+    # array_num_2()
     # quick_sort_2752()
     # quick_sort_1427()
-    split(random_list)
+    # split(random_list)
+    # insertion_sort()
+    print(random_list)
+    print(merge_sort(random_list))

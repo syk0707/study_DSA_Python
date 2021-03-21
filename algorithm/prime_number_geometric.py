@@ -104,10 +104,10 @@ def find_coordinate_rectangle():
     x = 0
     y = 0
     for each_x in x_coordinate.keys():
-        if (x_coordinate[each_x] == 1):
+        if x_coordinate[each_x] == 1:
             x = each_x
     for each_y in y_coordinate.keys():
-        if (y_coordinate[each_y] == 1):
+        if y_coordinate[each_y] == 1:
             y = each_y
     print(f"{x} {y}")
 
@@ -116,17 +116,17 @@ def check_right_triangle():
     ret_arr = []
     while True:
         input_arr = list(map(int, input().split()))
-        if (input_arr[0] == 0 and input_arr[1] == 0 and input_arr[2] == 0):
+        if input_arr[0] == 0 and input_arr[1] == 0 and input_arr[2] == 0:
             break
         large_num = input_arr[0]
         check_num_1 = 0
         check_num_2 = 0
-        if (large_num < input_arr[1]):
+        if large_num < input_arr[1]:
             check_num_1 = large_num
             large_num = input_arr[1]
         else:
             check_num_1 = input_arr[1]
-        if (large_num < input_arr[2]):
+        if large_num < input_arr[2]:
             check_num_2 = large_num
             large_num = input_arr[2]
         else:
