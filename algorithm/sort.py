@@ -145,17 +145,43 @@ def merge(left, right):
     return merged
 
 
+def merge_2(left, right):
+    merge_list = []
+    l_num = 0
+    r_num = 0
+    while len(left) > l_num and len(right) > r_num:
+        if left[l_num] < right[r_num]:
+            merge_list.append(left[l_num])
+            l_num += 1
+        else:
+            merge_list.append(right[r_num])
+            r_num += 1
+    merge_list += right[r_num:]
+    merge_list += left[l_num:]
+    return merge_list
+
+
 def merge_sort(data):
     if len(data) <= 1:
         return data
     medium = int(len(data) / 2)
     left = merge_sort(data[:medium])
     right = merge_sort(data[medium:])
-    return merge(left, right)
+    return merge_2(left, right)
+
+
+def merge_sort_2751():
+    total_num = int(sys.stdin.readline())
+    total_arr = list()
+    for idx in range(total_num):
+        total_arr.append(int(sys.stdin.readline()))
+    ret_arr = merge_sort(total_arr)
+    for num in ret_arr:
+        sys.stdout.write(f"{num}\n")
 
 
 if __name__ == "__main__":
-    random_list = random.sample(range(100), 10)
+    # random_list = random.sample(range(100), 10)
     # array_num()
     # bubble_sort()
     # insertion_sort()
@@ -165,5 +191,6 @@ if __name__ == "__main__":
     # quick_sort_1427()
     # split(random_list)
     # insertion_sort()
-    print(random_list)
-    print(merge_sort(random_list))
+    # print(random_list)
+    # print(merge_sort(random_list))
+    merge_sort_2751()
