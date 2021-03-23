@@ -180,6 +180,22 @@ def merge_sort_2751():
         sys.stdout.write(f"{num}\n")
 
 
+def sort_5576():
+    w_arr, k_arr = [], []
+    for w_idx in range(10):
+        w_arr.append(int(sys.stdin.readline()))
+    for k_idx in range(10):
+        k_arr.append(int(sys.stdin.readline()))
+    w_arr.sort(reverse=True)
+    k_arr.sort(reverse=True)
+    w_score, k_score = 0, 0
+    for w_num in range(0, 3):
+        w_score += w_arr[w_num]
+    for k_num in range(0, 3):
+        k_score += k_arr[k_num]
+    sys.stdout.write(f"{w_score} {k_score}")
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -193,4 +209,5 @@ if __name__ == "__main__":
     # insertion_sort()
     # print(random_list)
     # print(merge_sort(random_list))
-    merge_sort_2751()
+    # merge_sort_2751()
+    sort_5576()
