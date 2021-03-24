@@ -196,6 +196,35 @@ def sort_5576():
     sys.stdout.write(f"{w_score} {k_score}")
 
 
+def sort_15720():
+    num_arr = list(map(int, sys.stdin.readline().split()))
+    first_arr = list(map(int, sys.stdin.readline().split()))
+    second_arr = list(map(int, sys.stdin.readline().split()))
+    third_arr = list(map(int, sys.stdin.readline().split()))
+    num_arr.sort()
+    first_arr.sort()
+    second_arr.sort()
+    third_arr.sort()
+    min_num = num_arr[0]
+    total_price = 0
+    discount_price = 0
+    for idx in range(min_num):
+        price = first_arr.pop() + second_arr.pop() + third_arr.pop()
+        discount_price += int(price * 0.9)
+        total_price += price
+    for f_remain_num in first_arr:
+        total_price += f_remain_num
+        discount_price += f_remain_num
+    for s_remain_num in second_arr:
+        total_price += s_remain_num
+        discount_price += s_remain_num
+    for t_remain_num in third_arr:
+        total_price += t_remain_num
+        discount_price += t_remain_num
+    print(total_price)
+    print(discount_price)
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -210,4 +239,5 @@ if __name__ == "__main__":
     # print(random_list)
     # print(merge_sort(random_list))
     # merge_sort_2751()
-    sort_5576()
+    # sort_5576()
+    sort_15720()
