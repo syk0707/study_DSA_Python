@@ -180,6 +180,21 @@ def cal_average_10039():
     print(int(total_score / 5))
 
 
+def cal_num_1009():
+    total_num = int(sys.stdin.readline())
+    total_arr = []
+    for idx in range(total_num):
+        total_arr.append(list(map(int, sys.stdin.readline().split())))
+    for item in total_arr:
+        # item[0]의 item[1] 제곱을 10으로 나눈 나머지
+        # cf) pow(item[0], item[1]) item[0]의 item[1] 제곱
+        num = pow(item[0], item[1], 10)
+        if num == 0:
+            print(10)
+        else:
+            print(num)
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -193,4 +208,5 @@ if __name__ == "__main__":
     # divide_num_1312()
     # divide_num_1271()
     # addition_2558()
-    cal_average_10039()
+    # cal_average_10039()
+    cal_num_1009()
