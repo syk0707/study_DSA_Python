@@ -195,6 +195,14 @@ def cal_num_1009():
             print(num)
 
 
+def cal_num_2338():
+    first_num = int(sys.stdin.readline())
+    second_num = int(sys.stdin.readline())
+    sys.stdout.write(f"{first_num + second_num}\n")
+    sys.stdout.write(f"{first_num - second_num}\n")
+    sys.stdout.write(f"{first_num * second_num}\n")
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -209,4 +217,5 @@ if __name__ == "__main__":
     # divide_num_1271()
     # addition_2558()
     # cal_average_10039()
-    cal_num_1009()
+    # cal_num_1009()
+    cal_num_2338()

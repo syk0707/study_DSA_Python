@@ -225,6 +225,14 @@ def sort_15720():
     print(discount_price)
 
 
+def get_idx_num_2693():
+    num = int(sys.stdin.readline())
+    for idx in range(num):
+        arr = list(map(int, sys.stdin.readline().split()))
+        arr.sort(reverse=True)
+        print(arr.__getitem__(2))
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -240,4 +248,5 @@ if __name__ == "__main__":
     # print(merge_sort(random_list))
     # merge_sort_2751()
     # sort_5576()
-    sort_15720()
+    # sort_15720()
+    get_idx_num_2693()
