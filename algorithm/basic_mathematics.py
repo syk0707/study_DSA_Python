@@ -203,6 +203,36 @@ def cal_num_2338():
     sys.stdout.write(f"{first_num * second_num}\n")
 
 
+def get_num_11170():
+    total_idx = int(sys.stdin.readline())
+    for idx in range(total_idx):
+        input_arr = list(map(int, sys.stdin.readline().split()))
+        zero_num = 0
+        for num in range(input_arr[0], input_arr[1] + 1):
+            for str_num in str(num):
+                if str_num == "0":
+                    zero_num += 1
+        sys.stdout.write(f"{zero_num} \n")
+
+
+def get_max_num_11557():
+    total_case = int(sys.stdin.readline())
+    for idx in range(total_case):
+        each_case = int(sys.stdin.readline())
+        max_num = 0
+        max_university = ""
+        for each_idx in range(each_case):
+            each_arr = list(map(str, sys.stdin.readline().split()))
+            if each_idx == 0:
+                max_university = each_arr[0]
+                max_num = int(each_arr[1])
+            else:
+                if max_num < int(each_arr[1]):
+                    max_university = each_arr[0]
+                    max_num = int(each_arr[1])
+        sys.stdout.write(f"{max_university}\n")
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -218,4 +248,6 @@ if __name__ == "__main__":
     # addition_2558()
     # cal_average_10039()
     # cal_num_1009()
-    cal_num_2338()
+    # cal_num_2338()
+    # get_num_11170()
+    get_max_num_11557()
