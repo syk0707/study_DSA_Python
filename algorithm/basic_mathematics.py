@@ -233,6 +233,26 @@ def get_max_num_11557():
         sys.stdout.write(f"{max_university}\n")
 
 
+def get_max_num_2822():
+    total_dic = {}
+    for idx in range(8):
+        num = int(sys.stdin.readline())
+        if idx < 5:
+            total_dic[num] = idx+1
+        else:
+            minimum_num = sorted(total_dic)[0]
+            if minimum_num < num:
+                total_dic.pop(minimum_num)
+                total_dic[num] = idx+1
+    total_score = 0
+    total_idx = ""
+    for key, value in total_dic.items():
+        total_score += key
+        total_idx += f"{value} "
+    print(total_score)
+    print(total_idx)
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -250,4 +270,5 @@ if __name__ == "__main__":
     # cal_num_1009()
     # cal_num_2338()
     # get_num_11170()
-    get_max_num_11557()
+    # get_max_num_11557()
+    get_max_num_2822()
