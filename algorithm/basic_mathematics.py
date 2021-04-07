@@ -253,6 +253,15 @@ def get_max_num_2822():
     print(total_idx)
 
 
+def numeral_11179():
+    input_val = int(sys.stdin.readline())
+    binary_num = format(input_val, 'b')
+    num_str = ''
+    for binary_str in str(binary_num):
+        num_str = f"{binary_str}{num_str}"
+    sys.stdout.write(f"{int(num_str, 2)}")
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -271,4 +280,5 @@ if __name__ == "__main__":
     # cal_num_2338()
     # get_num_11170()
     # get_max_num_11557()
-    get_max_num_2822()
+    # get_max_num_2822()
+    numeral_11179()
