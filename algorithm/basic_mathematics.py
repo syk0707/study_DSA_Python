@@ -262,6 +262,11 @@ def numeral_11179():
     sys.stdout.write(f"{int(num_str, 2)}")
 
 
+def numeral_1550():
+    input_val = sys.stdin.readline()
+    sys.stdout.write(f"{int(input_val, 16)}")
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -281,4 +286,5 @@ if __name__ == "__main__":
     # get_num_11170()
     # get_max_num_11557()
     # get_max_num_2822()
-    numeral_11179()
+    # numeral_11179()
+    numeral_1550()
