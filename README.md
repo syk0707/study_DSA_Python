@@ -6,13 +6,13 @@ I ask for your understanding even if there are many shortcomings.
 
 
 
-#### Requirements
+### Requirements
 
 * Python 3.x
 
   
 
-###### Data Structures
+##### Data Structures
 
 [Linked List](data_structure/linked_list.py)
 
@@ -26,14 +26,20 @@ I ask for your understanding even if there are many shortcomings.
 
 
 
-###### Algorithms
+##### Algorithms
+
+[Back Tracking](algorithm/back_tracking.py)
 
 [Basic Mathematics](algorithm/basic_mathematics.py)
+
+[Dynamic](algorithm/dynamic.py)
 
 [Prime number and Geometric](algorithm/prime_number_geometric.py)
 
 [Recursive](algorithm/recursive.py)
 
+[Sort](algorithm/sort.py)
+
 [Stack](algorithm/stack.py)
 
-[Sort](algorithm/sort.py)
+[String](algorithm/string.py)
