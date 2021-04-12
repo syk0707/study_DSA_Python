@@ -35,7 +35,16 @@ def merge_17202():
     sys.stdout.write(tot_num)
 
 
+def get_vowel_10987():
+    str = sys.stdin.readline().rstrip()
+    ret_val = 0
+    for idx in range(len(str)):
+        if str[idx] == "a" or str[idx] == "e" or str[idx] == "i" or str[idx] == "o" or str[idx] == "u":
+            ret_val += 1
+    print(ret_val)
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
-    merge_17202()
+    # merge_17202()
+    get_vowel_10987()
