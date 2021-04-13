@@ -267,6 +267,13 @@ def numeral_1550():
     sys.stdout.write(f"{int(input_val, 16)}")
 
 
+def add_num_10953():
+    total_len = int(sys.stdin.readline())
+    for idx in range(total_len):
+        num_arr = list(map(int, sys.stdin.readline().split(",")))
+        sys.stdout.write(f"{num_arr[0] + num_arr[1]}\n")
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -287,4 +294,5 @@ if __name__ == "__main__":
     # get_max_num_11557()
     # get_max_num_2822()
     # numeral_11179()
-    numeral_1550()
+    # numeral_1550()
+    add_num_10953()
