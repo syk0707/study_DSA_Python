@@ -32,6 +32,8 @@ I ask for your understanding even if there are many shortcomings.
 
 [Basic Mathematics](algorithm/basic_mathematics.py)
 
+[Brute Force](algorithm/brute_force.py)
+
 [Dynamic](algorithm/dynamic.py)
 
 [Prime number and Geometric](algorithm/prime_number_geometric.py)
