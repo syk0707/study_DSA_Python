@@ -274,6 +274,14 @@ def add_num_10953():
         sys.stdout.write(f"{num_arr[0] + num_arr[1]}\n")
 
 
+def define_num_2475():
+    input_arr = list(map(int, sys.stdin.readline().split()))
+    tot_val = 0
+    for each_num in input_arr: 
+        tot_val += each_num ** 2
+    print(tot_val % 10)
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -295,4 +303,5 @@ if __name__ == "__main__":
     # get_max_num_2822()
     # numeral_11179()
     # numeral_1550()
-    add_num_10953()
+    # add_num_10953()
+    define_num_2475()
