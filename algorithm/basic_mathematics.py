@@ -282,6 +282,13 @@ def define_num_2475():
     print(tot_val % 10)
 
 
+def cal_score_5522():
+    total_score = 0
+    for idx in range(5):
+        total_score += int(sys.stdin.readline())
+    sys.stdout.write(f"{total_score}\n")
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -304,4 +311,5 @@ if __name__ == "__main__":
     # numeral_11179()
     # numeral_1550()
     # add_num_10953()
-    define_num_2475()
+    # define_num_2475()
+    cal_score_5522()
