@@ -29,5 +29,13 @@ def get_stack():
                 print(-1)
 
 
+def get_last_stop_14645():
+    total_arr = list(map(int, sys.stdin.readline().split()))
+    for idx in range(total_arr[0]):
+        each_arr = list(map(int, sys.stdin.readline().split()))
+    sys.stdout.write('비와이\n')
+
+
 if __name__ == "__main__":
-    get_stack()
+    # get_stack()
+    get_last_stop_14645()
