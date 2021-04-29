@@ -289,6 +289,23 @@ def cal_score_5522():
     sys.stdout.write(f"{total_score}\n")
 
 
+def cal_max_num_5596():
+    s_tot_arr = list(map(int, sys.stdin.readline().split()))
+    t_tot_arr = list(map(int, sys.stdin.readline().split()))
+
+    s_tot_score = 0
+    t_tot_score = 0
+
+    for idx in range(4):
+        s_tot_score += s_tot_arr[idx]
+        t_tot_score += t_tot_arr[idx]
+    
+    if s_tot_score >= t_tot_score:
+        sys.stdout.write(f"{s_tot_score}\n")
+    else:
+        sys.stdout.write(f"{t_tot_score}\n")
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -312,4 +329,5 @@ if __name__ == "__main__":
     # numeral_1550()
     # add_num_10953()
     # define_num_2475()
-    cal_score_5522()
+    # cal_score_5522()
+    cal_max_num_5596()
