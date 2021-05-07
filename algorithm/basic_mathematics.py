@@ -314,6 +314,20 @@ def cal_num_5565():
     sys.stdout.write(f"{tot_num - cal_num}\n")
 
 
+def cal_num_10103():
+    tot_num = int(sys.stdin.readline())
+    f_score = 100
+    s_score = 100
+    for idx in range(tot_num):
+        score = list(map(int, sys.stdin.readline().split()))
+        if score[0] > score[1]:
+            s_score -= score[0]
+        elif score[1] > score[0]:
+            f_score -= score[1]
+    sys.stdout.write(f"{f_score}\n")
+    sys.stdout.write(f"{s_score}\n")
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -339,4 +353,5 @@ if __name__ == "__main__":
     # define_num_2475()
     # cal_score_5522()
     # cal_max_num_5596()
-    cal_num_5565()
+    # cal_num_5565()
+    cal_num_10103()
