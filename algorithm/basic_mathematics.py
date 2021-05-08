@@ -336,6 +336,13 @@ def cal_num_10569():
         sys.stdout.write(f"{abs(cal_figure)}\n")
 
 
+def cal_num_17356():
+    tot_arr = list(map(int, sys.stdin.readline().split()))
+    score = (tot_arr[1] - tot_arr[0]) / 400
+    chance = 1 / (1 + 10 ** score)
+    sys.stdout.write(f"{chance}\n")
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -363,5 +370,6 @@ if __name__ == "__main__":
     # cal_max_num_5596()
     # cal_num_5565()
     # cal_num_10103()
-    cal_num_10569()
+    # cal_num_10569()
+    cal_num_17356()
 
