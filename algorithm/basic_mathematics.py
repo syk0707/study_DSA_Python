@@ -343,6 +343,18 @@ def cal_num_17356():
     sys.stdout.write(f"{chance}\n")
 
 
+def cal_num_5063():
+    tot_num = int(sys.stdin.readline())
+    for idx in range(tot_num):
+        case_arr = list(map(int, sys.stdin.readline().split()))
+        if case_arr[0] + case_arr[2] > case_arr[1]:
+            sys.stdout.write("do not advertise\n")
+        elif case_arr[0] + case_arr[2] == case_arr[1]:
+            sys.stdout.write("does not matter\n")
+        else:
+            sys.stdout.write("advertise\n")
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -371,5 +383,6 @@ if __name__ == "__main__":
     # cal_num_5565()
     # cal_num_10103()
     # cal_num_10569()
-    cal_num_17356()
+    # cal_num_17356()
+    cal_num_5063()
 
