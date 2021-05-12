@@ -355,6 +355,18 @@ def cal_num_5063():
             sys.stdout.write("advertise\n")
 
 
+def cal_min_5575():
+    tot_idx = int(sys.stdin.readline())
+    num_arr = list(map(int, sys.stdin.readline().split()))
+    idx = 0
+    cal_num = 0
+    for num in num_arr:
+        idx += 1
+        tot_num = num * idx
+        sys.stdout.write(f"{tot_num - cal_num} ")
+        cal_num += tot_num - cal_num
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -384,5 +396,5 @@ if __name__ == "__main__":
     # cal_num_10103()
     # cal_num_10569()
     # cal_num_17356()
-    cal_num_5063()
-
+    # cal_num_5063()
+    cal_min_5575()
