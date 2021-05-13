@@ -233,6 +233,23 @@ def get_idx_num_2693():
         print(arr.__getitem__(2))
 
 
+def sort_10814():
+    tot_case = int(sys.stdin.readline())
+    case_arr = []
+    for idx in range(tot_case):
+        each_case = list(map(str, sys.stdin.readline().split()))
+        each_case.insert(0, int(each_case[0]))
+        each_case.pop(1)
+        each_case.insert(1, idx)
+        case_arr.append(each_case)
+    case_arr.sort()
+    for case in case_arr:
+        if case is not case_arr[tot_case - 1]:
+            sys.stdout.write(f"{case[0]} {case[2]}\n")
+        else:
+            sys.stdout.write(f"{case[0]} {case[2]}")
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -249,4 +266,5 @@ if __name__ == "__main__":
     # merge_sort_2751()
     # sort_5576()
     # sort_15720()
-    get_idx_num_2693()
+    # get_idx_num_2693()
+    sort_10814()
