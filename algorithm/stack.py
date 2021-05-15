@@ -29,6 +29,15 @@ def get_stack():
                 print(-1)
 
 
+def stack_important_1966():
+    total_case_idx = int(sys.stdin.readline())
+    for idx in range(total_case_idx):
+        case_arr = list(map(int, sys.stdin.readline().split()))
+        important_arr = list(map(int, sys.stdin.readline().split()))
+        print(case_arr)
+        print(important_arr)
+
+
 def get_last_stop_14645():
     total_arr = list(map(int, sys.stdin.readline().split()))
     for idx in range(total_arr[0]):
@@ -38,4 +47,5 @@ def get_last_stop_14645():
 
 if __name__ == "__main__":
     # get_stack()
-    get_last_stop_14645()
+    # get_last_stop_14645()
+    stack_important_1966()
