@@ -43,8 +43,50 @@ def get_vowel_10987():
             ret_val += 1
     print(ret_val)
 
+
+def get_num_to_char_12778(text_arr):
+    return_text = ""
+    idx = 0
+    for text in text_arr:
+        num = int(text) + 64
+        if len(text_arr) - 1 != idx:
+            return_text += chr(num) + " "
+        else:
+            return_text += chr(num)
+        idx += 1
+    return return_text
+
+
+def get_char_to_num_12778(text_arr):
+    return_text = ""
+    idx = 0
+    for text in text_arr:
+        num = ord(text) - 64
+        if len(text_arr) - 1 != idx:
+            return_text += str(num) + " "
+        else:
+            return_text += str(num)
+        idx += 1
+    return return_text
+
+
+def get_char_12778():
+    tot_idx = int(sys.stdin.readline())
+    print_lines = []
+    for idx in range(tot_idx):
+        case_arr = list(map(str, sys.stdin.readline().split()))
+        question_arr = list(map(str, sys.stdin.readline().split()))
+        if case_arr[1] == "C":
+            print_lines.append(get_char_to_num_12778(question_arr))
+        else:
+            print_lines.append(get_num_to_char_12778(question_arr))
+    for print_line in print_lines:
+        sys.stdout.write(print_line + "\n")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
     # merge_17202()
-    get_vowel_10987()
+    # get_vowel_10987()
+    get_char_12778()
