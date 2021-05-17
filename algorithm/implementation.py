@@ -40,7 +40,29 @@ def arr_2684():
             sys.stdout.write(str(dic_data) + " ")
 
 
+def change_str_15814():
+    text = sys.stdin.readline()
+    tot_idx = int(sys.stdin.readline())
+    for idx in range(tot_idx):
+        change_arr = list(map(int, sys.stdin.readline().split()))
+        first_idx = 0
+        second_idx = 0
+        if change_arr[0] < change_arr[1]:
+            first_idx = change_arr[0]
+            second_idx = change_arr[1]
+        elif change_arr[1] < change_arr[0]:
+            first_idx = change_arr[1]
+            second_idx = change_arr[0]
+        else:
+            continue
+        first_char = text[first_idx]
+        second_char = text[second_idx]
+        text = text[:first_idx] + second_char + text[first_idx + 1: second_idx] + first_char + text[second_idx + 1:]
+    sys.stdout.write(text)
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
-    arr_2684()
+    # arr_2684()
+    change_str_15814()
