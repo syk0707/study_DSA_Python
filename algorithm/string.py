@@ -84,9 +84,15 @@ def get_char_12778():
         sys.stdout.write(print_line + "\n")
 
 
+def get_num_10821():
+    tot_arr = sys.stdin.readline().split(",")
+    sys.stdout.write(str(len(tot_arr)))
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
     # merge_17202()
     # get_vowel_10987()
-    get_char_12778()
+    # get_char_12778()
+    get_num_10821()
