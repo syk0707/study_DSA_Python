@@ -1,4 +1,5 @@
 import sys
+import math
 
 
 def chk_palindrome_10988():
@@ -36,10 +37,10 @@ def merge_17202():
 
 
 def get_vowel_10987():
-    str = sys.stdin.readline().rstrip()
+    str_vowel = sys.stdin.readline().rstrip()
     ret_val = 0
-    for idx in range(len(str)):
-        if str[idx] == "a" or str[idx] == "e" or str[idx] == "i" or str[idx] == "o" or str[idx] == "u":
+    for idx in range(len(str_vowel)):
+        if str_vowel[idx] == "a" or str_vowel[idx] == "e" or str_vowel[idx] == "i" or str_vowel[idx] == "o" or str_vowel[idx] == "u":
             ret_val += 1
     print(ret_val)
 
@@ -89,10 +90,22 @@ def get_num_10821():
     sys.stdout.write(str(len(tot_arr)))
 
 
+def get_str_20114():
+    num_arr = list(map(int, sys.stdin.readline().rstrip().split()))
+    char_arr = ["?" for i in range(num_arr[0])]
+    for idx in range(num_arr[1]):
+        sentence = sys.stdin.readline().rstrip()
+        for len_sentence in range(len(sentence)):
+            if sentence[len_sentence] != "?":
+                char_arr[math.ceil((len_sentence + 1) / num_arr[2]) - 1] = sentence[len_sentence]
+    sys.stdout.write(f"{''.join(char_arr)}")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
     # merge_17202()
     # get_vowel_10987()
     # get_char_12778()
-    get_num_10821()
+    # get_num_10821()
+    get_str_20114()
