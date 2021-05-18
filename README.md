@@ -46,4 +46,4 @@ I ask for your understanding even if there are many shortcomings.
 
 [Stack](algorithm/stack.py)
 
-[String](algorithm/string.py)
+[String_type](algorithm/string_type.py)
