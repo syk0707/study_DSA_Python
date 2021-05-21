@@ -101,6 +101,17 @@ def get_str_20114():
     sys.stdout.write(f"{''.join(char_arr)}")
 
 
+def check_sentence_15813():
+    num = int(sys.stdin.readline())
+    name = sys.stdin.readline().rstrip()
+    char_arr = [char for char in name]
+    print(char_arr)
+    ret_val = 0
+    for char in char_arr:
+        ret_val += ord(char) - 64
+    print(ret_val)
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -108,4 +119,5 @@ if __name__ == "__main__":
     # get_vowel_10987()
     # get_char_12778()
     # get_num_10821()
-    get_str_20114()
+    # get_str_20114()
+    check_sentence_15813()
