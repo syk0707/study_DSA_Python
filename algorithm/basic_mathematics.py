@@ -367,6 +367,15 @@ def cal_min_5575():
         cal_num += tot_num - cal_num
 
 
+def cal_avg_5691():
+    while True:
+        case_num = list(map(int, sys.stdin.readline().split()))
+        if case_num[0] == 0 and case_num[1] == 0:
+            break
+        diff = case_num[1] - case_num[0]
+        sys.stdout.write(f"{case_num[0] - diff}\n")
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -397,4 +406,5 @@ if __name__ == "__main__":
     # cal_num_10569()
     # cal_num_17356()
     # cal_num_5063()
-    cal_min_5575()
+    # cal_min_5575()
+    cal_avg_5691()
