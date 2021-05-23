@@ -45,7 +45,28 @@ def get_last_stop_14645():
     sys.stdout.write('비와이\n')
 
 
+def check_possible_stack_1874():
+    total_num = int(sys.stdin.readline())
+    count = 1
+    ret_arr = []
+    stack_arr = []
+    for idx in range(total_num):
+        input_num = int(sys.stdin.readline())
+        while count <= input_num:
+            stack_arr.append(count)
+            count += 1
+            ret_arr.append('+')
+        if stack_arr[-1] == input_num:
+            stack_arr.pop()
+            ret_arr.append('-')
+        else:
+            sys.stdout.write('NO')
+            return
+    sys.stdout.write('\n'.join(ret_arr))
+
+
 if __name__ == "__main__":
     # get_stack()
     # get_last_stop_14645()
-    stack_important_1966()
+    # stack_important_1966()
+    check_possible_stack_1874()
