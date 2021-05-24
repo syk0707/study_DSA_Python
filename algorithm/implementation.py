@@ -61,8 +61,19 @@ def change_str_15814():
     sys.stdout.write(text)
 
 
+def check_num_14656():
+    tot_idx = int(sys.stdin.readline())
+    tot_arr = list(map(int, sys.stdin.readline().rstrip().split()))
+    ret_val = 0
+    for idx in range(tot_idx):
+        if tot_arr[idx] != idx + 1:
+            ret_val += 1
+    sys.stdout.write(str(ret_val))
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
     # arr_2684()
-    change_str_15814()
+    # change_str_15814()
+    check_num_14656()
