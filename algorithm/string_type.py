@@ -112,6 +112,14 @@ def check_sentence_15813():
     print(ret_val)
 
 
+def string_print_15680():
+    case_num = int(sys.stdin.readline())
+    if case_num == 0:
+        sys.stdout.write("YONSEI")
+    elif case_num == 1:
+        sys.stdout.write("Leading the Way to the Future")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -120,4 +128,5 @@ if __name__ == "__main__":
     # get_char_12778()
     # get_num_10821()
     # get_str_20114()
-    check_sentence_15813()
+    # check_sentence_15813()
+    string_print_15680()
