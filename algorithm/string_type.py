@@ -120,6 +120,13 @@ def string_print_15680():
         sys.stdout.write("Leading the Way to the Future")
 
 
+def string_print_13752():
+    total_idx = int(sys.stdin.readline())
+    for idx in range(total_idx):
+        num = int(sys.stdin.readline())
+        sys.stdout.write(f"{num * '='}\n")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -129,4 +136,5 @@ if __name__ == "__main__":
     # get_num_10821()
     # get_str_20114()
     # check_sentence_15813()
-    string_print_15680()
+    # string_print_15680()
+    string_print_13752()
