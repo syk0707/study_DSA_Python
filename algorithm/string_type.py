@@ -127,6 +127,16 @@ def string_print_13752():
         sys.stdout.write(f"{num * '='}\n")
 
 
+def print_star_10995():
+    tot_idx = int(sys.stdin.readline())
+    for idx in range(tot_idx):
+        if idx % 2 == 0:
+            print_str = '* ' * tot_idx
+        else:
+            print_str = ' *' * tot_idx
+        sys.stdout.write(f"{print_str.rstrip()}\n")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -137,4 +147,5 @@ if __name__ == "__main__":
     # get_str_20114()
     # check_sentence_15813()
     # string_print_15680()
-    string_print_13752()
+    # string_print_13752()
+    print_star_10995()
