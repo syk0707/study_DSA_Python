@@ -250,6 +250,19 @@ def sort_10814():
             sys.stdout.write(f"{case[0]} {case[2]}")
 
 
+def sort_10813():
+    tot_arr = list(map(int, sys.stdin.readline().split()))
+    case_arr = [i + 1 for i in range(tot_arr[0])]
+    for idx in range(tot_arr[1]):
+        case_idx_arr = list(map(int, sys.stdin.readline().split()))
+        change_first_num = case_arr[case_idx_arr[0] - 1]
+        change_second_num = case_arr[case_idx_arr[1] - 1]
+        case_arr[case_idx_arr[0] - 1] = change_second_num
+        case_arr[case_idx_arr[1] - 1] = change_first_num
+    for ret_num in case_arr:
+        sys.stdout.write(f"{ret_num} ")
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -267,4 +280,5 @@ if __name__ == "__main__":
     # sort_5576()
     # sort_15720()
     # get_idx_num_2693()
-    sort_10814()
+    # sort_10814()
+    sort_10813()
