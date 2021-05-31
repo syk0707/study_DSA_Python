@@ -137,6 +137,11 @@ def print_star_10995():
         sys.stdout.write(f"{print_str.rstrip()}\n")
 
 
+def string_print_16394():
+    num = int(sys.stdin.readline())
+    sys.stdout.write(f"{num - 1946}\n")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -148,4 +153,5 @@ if __name__ == "__main__":
     # check_sentence_15813()
     # string_print_15680()
     # string_print_13752()
-    print_star_10995()
+    # print_star_10995()
+    string_print_16394()
