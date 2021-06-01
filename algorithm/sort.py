@@ -263,6 +263,26 @@ def sort_10813():
         sys.stdout.write(f"{ret_num} ")
 
 
+def sort_18766():
+    tot_idx = int(sys.stdin.readline())
+    for idx in range(tot_idx):
+        case_num = int(sys.stdin.readline())
+        first_arr = list(map(str, sys.stdin.readline().split()))
+        second_arr = list(map(str, sys.stdin.readline().split()))
+        first_arr.sort()
+        second_arr.sort()
+        first_idx = 0
+        is_cheater = False
+        for first_item in first_arr:
+            if first_item != second_arr[first_idx]:
+                sys.stdout.write("CHEATER\n")
+                is_cheater = True
+                break
+            first_idx += 1
+        if is_cheater is False:
+            sys.stdout.write("NOT CHEATER\n")
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -281,4 +301,6 @@ if __name__ == "__main__":
     # sort_15720()
     # get_idx_num_2693()
     # sort_10814()
-    sort_10813()
+    # sort_10813()
+    sort_18766()
+
