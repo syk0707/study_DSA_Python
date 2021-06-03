@@ -32,6 +32,8 @@ I ask for your understanding even if there are many shortcomings.
 
 [Basic Mathematics](algorithm/basic_mathematics.py)
 
+[BFS & DFS](algorithm/bfs_dfs.py)
+
 [Brute Force](algorithm/brute_force.py)
 
 [Dynamic](algorithm/dynamic.py)
