@@ -71,9 +71,28 @@ def check_num_14656():
     sys.stdout.write(str(ret_val))
 
 
+def check_20362():
+    tot_case = list(map(str, sys.stdin.readline().split()))
+    early_num = 0
+    dict_case = {}
+    check_word = ''
+    for idx in range(int(tot_case[0])):
+        each_case = list(map(str, sys.stdin.readline().split()))
+        if each_case[0] == tot_case[1]:
+            check_word = each_case[1]
+            break
+        dict_case[each_case[0]] = each_case[1]
+    for each_word in dict_case.values():
+        if check_word == each_word:
+            early_num += 1
+    sys.stdout.write(f"{early_num}")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
     # arr_2684()
     # change_str_15814()
-    check_num_14656()
+    # check_num_14656()
+    check_20362()
+
