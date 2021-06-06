@@ -283,6 +283,15 @@ def sort_18766():
             sys.stdout.write("NOT CHEATER\n")
 
 
+def sort_15819():
+    tot_case = list(map(int, sys.stdin.readline().split()))
+    input_arr = []
+    for idx in range(tot_case[0]):
+        input_arr.append(sys.stdin.readline())
+    input_arr.sort()
+    sys.stdout.write(f"{input_arr[tot_case[1] - 1]}")
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -302,5 +311,6 @@ if __name__ == "__main__":
     # get_idx_num_2693()
     # sort_10814()
     # sort_10813()
-    sort_18766()
+    # sort_18766()
+    sort_15819()
 
