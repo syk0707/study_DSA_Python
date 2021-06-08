@@ -142,6 +142,24 @@ def string_print_16394():
     sys.stdout.write(f"{num - 1946}\n")
 
 
+def get_word_count_5586():
+    word = sys.stdin.readline()
+    joi_cnt = 0
+    ioi_cnt = 0
+    if len(word) < 3:
+        sys.stdout.write(f"{joi_cnt}\n")
+        sys.stdout.write(f"{ioi_cnt}")
+        return
+    for idx in range(len(word) - 2):
+        chk_str = f"{word[idx]}{word[idx + 1]}{word[idx + 2]}"
+        if chk_str == "JOI":
+            joi_cnt += 1
+        elif chk_str == "IOI":
+            ioi_cnt += 1
+    sys.stdout.write(f"{joi_cnt}\n")
+    sys.stdout.write(f"{ioi_cnt}")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -154,4 +172,5 @@ if __name__ == "__main__":
     # string_print_15680()
     # string_print_13752()
     # print_star_10995()
-    string_print_16394()
+    # string_print_16394()
+    get_word_count_5586()
