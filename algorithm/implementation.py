@@ -88,11 +88,30 @@ def check_20362():
     sys.stdout.write(f"{early_num}")
 
 
+def check_14382():
+    tot_idx = int(sys.stdin.readline())
+    for idx in range(tot_idx):
+        dict_num = {}
+        first_num = int(sys.stdin.readline())
+        if first_num == 0:
+            sys.stdout.write(f"Case #{idx + 1}: INSOMNIA\n")
+            continue
+        multiple_num = 1
+        while True:
+            cal_num = multiple_num * first_num
+            for each_num in str(cal_num):
+                dict_num[int(each_num)] = 1
+            if len(dict_num.keys()) == 10:
+                sys.stdout.write(f"Case #{idx + 1}: {cal_num}\n")
+                break
+            multiple_num += 1
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
     # arr_2684()
     # change_str_15814()
     # check_num_14656()
-    check_20362()
-
+    # check_20362()
+    check_14382()
