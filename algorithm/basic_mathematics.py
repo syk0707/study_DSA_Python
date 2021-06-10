@@ -376,6 +376,13 @@ def cal_avg_5691():
         sys.stdout.write(f"{case_num[0] - diff}\n")
 
 
+def get_lcm_gcd_2702():
+    total_idx = int(sys.stdin.readline())
+    for idx in range(total_idx):
+        case_num = list(map(int, sys.stdin.readline().split()))
+        sys.stdout.write(f"{math.lcm(case_num[0], case_num[1])} {math.gcd(case_num[0], case_num[1])}\n")
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -407,4 +414,5 @@ if __name__ == "__main__":
     # cal_num_17356()
     # cal_num_5063()
     # cal_min_5575()
-    cal_avg_5691()
+    # cal_avg_5691()
+    get_lcm_gcd_2702()
