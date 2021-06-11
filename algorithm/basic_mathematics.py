@@ -383,6 +383,19 @@ def get_lcm_gcd_2702():
         sys.stdout.write(f"{math.lcm(case_num[0], case_num[1])} {math.gcd(case_num[0], case_num[1])}\n")
 
 
+def get_gcd_9417():
+    tot_idx = int(sys.stdin.readline())
+    for idx in range(tot_idx):
+        case_arr = list(map(int, sys.stdin.readline().split()))
+        max_num = 0
+        for case_idx in range(0, len(case_arr) - 1, 1):
+            for case_2_idx in range(case_idx + 1, len(case_arr), 1):
+                comp_num = math.gcd(case_arr[case_idx], case_arr[case_2_idx])
+                if comp_num > max_num:
+                    max_num = comp_num
+        sys.stdout.write(f"{max_num}\n")
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -415,4 +428,5 @@ if __name__ == "__main__":
     # cal_num_5063()
     # cal_min_5575()
     # cal_avg_5691()
-    get_lcm_gcd_2702()
+    # get_lcm_gcd_2702()
+    get_gcd_9417()
