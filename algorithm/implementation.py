@@ -107,6 +107,29 @@ def check_14382():
             multiple_num += 1
 
 
+def compare_20112():
+    tot_num = int(sys.stdin.readline())
+    check_arr = []
+    is_sator = True
+    for tot_idx in range(tot_num):
+        check_arr.append(sys.stdin.readline())
+
+    for chk_1_idx in range(len(check_arr)):
+        for chk_2_idx in range(len(check_arr)):
+            if chk_1_idx == chk_2_idx:
+                continue
+            check_char_1 = check_arr[chk_1_idx][chk_2_idx]
+            check_char_2 = check_arr[chk_2_idx][chk_1_idx]
+            if check_char_1 != check_char_2:
+                is_sator = False
+                break
+
+    if is_sator:
+        sys.stdout.write("YES")
+    else:
+        sys.stdout.write("NO")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -114,4 +137,5 @@ if __name__ == '__main__':
     # change_str_15814()
     # check_num_14656()
     # check_20362()
-    check_14382()
+    # check_14382()
+    compare_20112()
