@@ -130,6 +130,21 @@ def compare_20112():
         sys.stdout.write("NO")
 
 
+def check_1259():
+    while True:
+        num = int(sys.stdin.readline())
+        if num == 0:
+            break
+        reverse_num = ""
+        for char_num in str(num):
+            reverse_num = char_num + reverse_num
+        reverse_num = int(reverse_num)
+        if num == reverse_num:
+            sys.stdout.write("yes\n")
+        else:
+            sys.stdout.write("no\n")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -138,4 +153,5 @@ if __name__ == '__main__':
     # check_num_14656()
     # check_20362()
     # check_14382()
-    compare_20112()
+    # compare_20112()
+    check_1259()
