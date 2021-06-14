@@ -160,6 +160,12 @@ def get_word_count_5586():
     sys.stdout.write(f"{ioi_cnt}")
 
 
+def change_type_2998():
+    num = sys.stdin.readline().rstrip()
+    cal_num = int(f"0b{num}", 2)
+    sys.stdout.write(f"{oct(cal_num)[2:]}")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -173,4 +179,5 @@ if __name__ == "__main__":
     # string_print_13752()
     # print_star_10995()
     # string_print_16394()
-    get_word_count_5586()
+    # get_word_count_5586()
+    change_type_2998()
