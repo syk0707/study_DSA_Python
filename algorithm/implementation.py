@@ -145,6 +145,24 @@ def check_1259():
             sys.stdout.write("no\n")
 
 
+def read_vertical_10798():
+    tot_arr = []
+    max_len = 0
+    print_str = "";
+    for idx in range(5):
+        input_str = sys.stdin.readline().rstrip()
+        tot_arr.append(input_str)
+        if max_len < len(input_str):
+            max_len = len(input_str)
+    for len_idx in range(max_len):
+        for arr_idx in range(5):
+            each_word = tot_arr[arr_idx]
+            if len(each_word) < len_idx + 1:
+                continue
+            print_str += each_word[len_idx]
+    sys.stdout.write(print_str)
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -154,4 +172,5 @@ if __name__ == '__main__':
     # check_20362()
     # check_14382()
     # compare_20112()
-    check_1259()
+    # check_1259()
+    read_vertical_10798()
