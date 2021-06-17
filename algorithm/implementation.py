@@ -163,6 +163,17 @@ def read_vertical_10798():
     sys.stdout.write(print_str)
 
 
+def bi_num_11050():
+    num_arr = list(map(int, sys.stdin.readline().split()))
+    numerator_num = 1
+    denominator_num = 1
+    for numerator_each_num in range(0, num_arr[1]):
+        numerator_num *= (num_arr[0] - numerator_each_num)
+    for denominator_each_num in range(1, num_arr[1] + 1):
+        denominator_num *= denominator_each_num
+    sys.stdout.write(f"{int(numerator_num / denominator_num)}\n")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -173,4 +184,5 @@ if __name__ == '__main__':
     # check_14382()
     # compare_20112()
     # check_1259()
-    read_vertical_10798()
+    # read_vertical_10798()
+    bi_num_11050()
