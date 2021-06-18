@@ -396,6 +396,12 @@ def get_gcd_9417():
         sys.stdout.write(f"{max_num}\n")
 
 
+def get_lcm_gcd_2609():
+    tot_arr = list(map(int, sys.stdin.readline().split()))
+    sys.stdout.write(f"{math.gcd(tot_arr[0], tot_arr[1])}\n")
+    sys.stdout.write(f"{math.lcm(tot_arr[0], tot_arr[1])}")
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -429,4 +435,5 @@ if __name__ == "__main__":
     # cal_min_5575()
     # cal_avg_5691()
     # get_lcm_gcd_2702()
-    get_gcd_9417()
+    # get_gcd_9417()
+    get_lcm_gcd_2609()
