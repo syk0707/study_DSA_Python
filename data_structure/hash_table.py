@@ -1,3 +1,5 @@
+import sys
+
 hash_table = list([0 for i in range(8)])
 
 
@@ -61,9 +63,22 @@ def read_data(data):
         return None
 
 
-print(hash('Dave') % 8)
-print(hash('Dd') % 8)
-print(hash('Data') % 8)
-save_data('Dd', '1201023010')
-save_data('Data', '3301023010')
-read_data('Dd')
+def find_str_17219():
+    case_arr = list(map(int, sys.stdin.readline().split()))
+    pass_dict = {}
+    for idx in range(case_arr[0]):
+        each_pass = sys.stdin.readline().split()
+        pass_dict[each_pass[0]] = each_pass[1]
+    for print_idx in range(case_arr[1]):
+        each_key = sys.stdin.readline().rstrip()
+        sys.stdout.write(f"{pass_dict[each_key]}\n")
+
+
+if __name__ == "__main__":
+    # print(hash('Dave') % 8)
+    # print(hash('Dd') % 8)
+    # print(hash('Data') % 8)
+    # save_data('Dd', '1201023010')
+    # save_data('Data', '3301023010')
+    # read_data('Dd')
+    find_str_17219()
