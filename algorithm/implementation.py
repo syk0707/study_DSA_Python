@@ -174,6 +174,15 @@ def bi_num_11050():
     sys.stdout.write(f"{int(numerator_num / denominator_num)}\n")
 
 
+def capital_sentence_4458():
+    tot_idx = int(sys.stdin.readline())
+    tot_arr = []
+    for idx in range(tot_idx):
+        tot_arr.append(sys.stdin.readline())
+    for each_item in tot_arr:
+        sys.stdout.write(f"{each_item[0].capitalize()}{each_item[1:]}")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -185,4 +194,5 @@ if __name__ == '__main__':
     # compare_20112()
     # check_1259()
     # read_vertical_10798()
-    bi_num_11050()
+    # bi_num_11050()
+    capital_sentence_4458()
