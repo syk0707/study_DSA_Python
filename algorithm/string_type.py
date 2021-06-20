@@ -166,6 +166,17 @@ def change_type_2998():
     sys.stdout.write(f"{oct(cal_num)[2:]}")
 
 
+def string_print_11721():
+    input_sentence = sys.stdin.readline().rstrip()
+    tot_len = int(len(input_sentence) / 10) + 1
+    for idx in range(tot_len):
+        current_idx = idx * 10
+        if idx != tot_len - 1:
+            sys.stdout.write(f"{input_sentence[current_idx:current_idx+10]}\n")
+        else:
+            sys.stdout.write(input_sentence[current_idx:len(input_sentence)])
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -180,4 +191,5 @@ if __name__ == "__main__":
     # print_star_10995()
     # string_print_16394()
     # get_word_count_5586()
-    change_type_2998()
+    # change_type_2998()
+    string_print_11721()
