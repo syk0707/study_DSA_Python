@@ -1,4 +1,5 @@
 import sys
+import math
 
 
 def rectangles_15232():
@@ -183,6 +184,24 @@ def capital_sentence_4458():
         sys.stdout.write(f"{each_item[0].capitalize()}{each_item[1:]}")
 
 
+def perfect_square_1977():
+    start_num = int(sys.stdin.readline())
+    end_num = int(sys.stdin.readline())
+    tot_num = 0
+    min_num = 0
+    first_num = math.ceil(math.sqrt(start_num))
+    min_num = first_num
+    while first_num ** 2 <= end_num:
+        if start_num <= first_num ** 2 <= end_num:
+            tot_num += first_num ** 2
+        first_num += 1
+    if tot_num == 0:
+        sys.stdout.write(f"{-1}\n")
+        return
+    sys.stdout.write(f"{tot_num}\n")
+    sys.stdout.write(f"{min_num ** 2}")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -195,4 +214,5 @@ if __name__ == '__main__':
     # check_1259()
     # read_vertical_10798()
     # bi_num_11050()
-    capital_sentence_4458()
+    # capital_sentence_4458()
+    perfect_square_1977()
