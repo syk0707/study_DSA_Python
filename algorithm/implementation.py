@@ -202,6 +202,27 @@ def perfect_square_1977():
     sys.stdout.write(f"{min_num ** 2}")
 
 
+def type_check_10820():
+    while True:
+        check_sentence = sys.stdin.readline().rstrip("\n")
+        if not check_sentence:
+            break
+        lower_num = 0
+        upper_num = 0
+        figure_num = 0
+        empty_num = 0
+        for char_sentence in check_sentence:
+            if char_sentence.islower():
+                lower_num += 1
+            elif char_sentence.isupper():
+                upper_num += 1
+            elif char_sentence.isdigit():
+                figure_num += 1
+            elif char_sentence.isspace():
+                empty_num += 1
+        sys.stdout.write(f"{lower_num} {upper_num} {figure_num} {empty_num}\n")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -215,4 +236,5 @@ if __name__ == '__main__':
     # read_vertical_10798()
     # bi_num_11050()
     # capital_sentence_4458()
-    perfect_square_1977()
+    # perfect_square_1977()
+    type_check_10820()
