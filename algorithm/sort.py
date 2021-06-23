@@ -292,6 +292,13 @@ def sort_15819():
     sys.stdout.write(f"{input_arr[tot_case[1] - 1]}")
 
 
+def sort_15969():
+    tot_num = int(sys.stdin.readline())
+    tot_score = list(map(int, sys.stdin.readline().split()))
+    tot_score.sort()
+    sys.stdout.write(f"{tot_score[-1] - tot_score[0]}")
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -312,5 +319,6 @@ if __name__ == "__main__":
     # sort_10814()
     # sort_10813()
     # sort_18766()
-    sort_15819()
+    # sort_15819()
+    sort_15969()
 
