@@ -17,5 +17,18 @@ def black_jack_2798():
     sys.stdout.write(f"{max_num}\n")
 
 
+def get_num_14914():
+    num_list = list(map(int, sys.stdin.readline().split()))
+    divide_arr = []
+    for idx in range(1, num_list[0] + 1):
+        if num_list[1] < idx:
+            break
+        if num_list[0] % idx == 0 and num_list[1] % idx == 0:
+            divide_arr.append(idx)
+    for divide_num in divide_arr:
+        sys.stdout.write(f"{divide_num} {int(num_list[0] / divide_num)} {int(num_list[1] / divide_num)}\n")
+
+
 if __name__ == "__main__":
-    black_jack_2798()
+    # black_jack_2798()
+    get_num_14914()
