@@ -223,6 +223,20 @@ def type_check_10820():
         sys.stdout.write(f"{lower_num} {upper_num} {figure_num} {empty_num}\n")
 
 
+def large_num_check_10570():
+    tot_num = int(sys.stdin.readline())
+    for each_num in range(tot_num):
+        case_num = int(sys.stdin.readline())
+        case_dic = {}
+        for each_case_num in range(case_num):
+            input_num = int(sys.stdin.readline())
+            if case_dic.get(input_num) is None:
+                case_dic[input_num] = 1
+            else:
+                case_dic[input_num] += 1
+        sys.stdout.write(f"{sorted(case_dic.items(), key=lambda x: (-x[1], x[0]))[0][0]}\n")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -237,4 +251,5 @@ if __name__ == '__main__':
     # bi_num_11050()
     # capital_sentence_4458()
     # perfect_square_1977()
-    type_check_10820()
+    # type_check_10820()
+    large_num_check_10570()
