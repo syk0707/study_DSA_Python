@@ -237,6 +237,16 @@ def large_num_check_10570():
         sys.stdout.write(f"{sorted(case_dic.items(), key=lambda x: (-x[1], x[0]))[0][0]}\n")
 
 
+def num_check_10797():
+    case_num = int(sys.stdin.readline())
+    case_arr = list(map(int, sys.stdin.readline().split()))
+    ret_num = 0
+    for each_num in case_arr:
+        if each_num % 10 == case_num:
+            ret_num += 1
+    sys.stdout.write(f"{ret_num}")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -252,4 +262,5 @@ if __name__ == '__main__':
     # capital_sentence_4458()
     # perfect_square_1977()
     # type_check_10820()
-    large_num_check_10570()
+    # large_num_check_10570()
+    num_check_10797()
