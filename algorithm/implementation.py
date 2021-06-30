@@ -247,6 +247,17 @@ def num_check_10797():
     sys.stdout.write(f"{ret_num}")
 
 
+def round_2033():
+    check_num = int(sys.stdin.readline())
+    divide_num = 10
+    while check_num > divide_num:
+        if check_num % divide_num >= divide_num // 2:
+            check_num += divide_num
+        check_num -= (check_num % divide_num)
+        divide_num *= 10
+    sys.stdout.write(f"{check_num}")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -263,4 +274,5 @@ if __name__ == '__main__':
     # perfect_square_1977()
     # type_check_10820()
     # large_num_check_10570()
-    num_check_10797()
+    # num_check_10797()
+    round_2033()
