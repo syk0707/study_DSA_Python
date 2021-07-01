@@ -29,6 +29,21 @@ def get_num_14914():
         sys.stdout.write(f"{divide_num} {int(num_list[0] / divide_num)} {int(num_list[1] / divide_num)}\n")
 
 
+def get_num_2501():
+    ans_arr = []
+    case_arr = list(map(int, sys.stdin.readline().split()))
+    for num in range(1, case_arr[0] + 1):
+        if case_arr[0] % num == 0:
+            ans_arr.append(num)
+        if len(ans_arr) > case_arr[1]:
+            break
+    if len(ans_arr) <= case_arr[1] - 1:
+        sys.stdout.write(f"{0}")
+    else:
+        sys.stdout.write(f"{ans_arr[case_arr[1] - 1]}")
+
+
 if __name__ == "__main__":
     # black_jack_2798()
-    get_num_14914()
+    # get_num_14914()
+    get_num_2501()
