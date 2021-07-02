@@ -177,6 +177,14 @@ def string_print_11721():
             sys.stdout.write(input_sentence[current_idx:len(input_sentence)])
 
 
+def string_print_11719():
+    while True:
+        try:
+            print(input())
+        except EOFError:
+            break
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -192,4 +200,5 @@ if __name__ == "__main__":
     # string_print_16394()
     # get_word_count_5586()
     # change_type_2998()
-    string_print_11721()
+    # string_print_11721()
+    string_print_11719()
