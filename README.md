@@ -40,6 +40,8 @@ I ask for your understanding even if there are many shortcomings.
 
 [Implementation](algorithm/implementation.py)
 
+[Mathematics](algorithm/mathematics.py)
+
 [Prime number and Geometric](algorithm/prime_number_geometric.py)
 
 [Recursive](algorithm/recursive.py)
