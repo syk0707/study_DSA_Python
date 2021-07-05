@@ -185,6 +185,11 @@ def string_print_11719():
             break
 
 
+def string_length_2743():
+    input_val = sys.stdin.readline().rstrip()
+    sys.stdout.write(f"{len(input_val)}")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -201,4 +206,5 @@ if __name__ == "__main__":
     # get_word_count_5586()
     # change_type_2998()
     # string_print_11721()
-    string_print_11719()
+    # string_print_11719()
+    string_length_2743()
