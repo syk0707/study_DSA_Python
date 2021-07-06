@@ -258,6 +258,13 @@ def round_2033():
     sys.stdout.write(f"{check_num}")
 
 
+def add_1357():
+    case_arr = list(map(int, sys.stdin.readline().split()))
+    first_reverse_num = int(str(case_arr[0])[::-1])
+    second_reverse_num = int(str(case_arr[1])[::-1])
+    sys.stdout.write(f"{int(str(first_reverse_num + second_reverse_num)[::-1])}")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -275,4 +282,5 @@ if __name__ == '__main__':
     # type_check_10820()
     # large_num_check_10570()
     # num_check_10797()
-    round_2033()
+    # round_2033()
+    add_1357()
