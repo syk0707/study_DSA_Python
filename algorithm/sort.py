@@ -299,6 +299,26 @@ def sort_15969():
     sys.stdout.write(f"{tot_score[-1] - tot_score[0]}")
 
 
+def sort_check_11536():
+    is_increase = True
+    is_decrease = True
+    tot_case = int(sys.stdin.readline())
+    tot_arr = []
+    for idx in range(tot_case):
+        tot_arr.append(sys.stdin.readline().rstrip())
+    for each_idx in range(1, len(tot_arr)):
+        if tot_arr[each_idx] >= tot_arr[each_idx - 1]:
+            is_decrease = False
+        elif tot_arr[each_idx] <= tot_arr[each_idx - 1]:
+            is_increase = False
+    if not is_increase and not is_decrease:
+        sys.stdout.write("NEITHER")
+    elif is_increase:
+        sys.stdout.write("INCREASING")
+    elif is_decrease:
+        sys.stdout.write("DECREASING")
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -320,5 +340,5 @@ if __name__ == "__main__":
     # sort_10813()
     # sort_18766()
     # sort_15819()
-    sort_15969()
-
+    # sort_15969()
+    sort_check_11536()
