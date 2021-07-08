@@ -319,6 +319,13 @@ def sort_check_11536():
         sys.stdout.write("DECREASING")
 
 
+def sort_16212():
+    tot_case = int(sys.stdin.readline())
+    each_arr = list(map(int, sys.stdin.readline().split()))
+    each_arr.sort()
+    sys.stdout.write(f"{' '.join(str(i) for i in each_arr)}")
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -341,4 +348,5 @@ if __name__ == "__main__":
     # sort_18766()
     # sort_15819()
     # sort_15969()
-    sort_check_11536()
+    # sort_check_11536()
+    sort_16212()
