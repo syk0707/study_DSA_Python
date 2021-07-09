@@ -12,5 +12,15 @@ def strange_multiplication_1225():
     sys.stdout.write(f"{case_1_val * case_2_val}")
 
 
+def get_number_1037():
+    case_num = int(sys.stdin.readline())
+    tot_arr = list(map(int, sys.stdin.readline().split()))
+    tot_arr.sort()
+    small_num = tot_arr[0]
+    large_num = tot_arr[case_num - 1]
+    sys.stdout.write(f"{small_num * large_num}")
+
+
 if __name__ == "__main__":
-    strange_multiplication_1225()
+    # strange_multiplication_1225()
+    get_number_1037()
