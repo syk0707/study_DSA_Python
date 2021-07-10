@@ -1,5 +1,6 @@
 import sys
 import math
+import string
 
 
 def chk_palindrome_10988():
@@ -190,6 +191,25 @@ def string_length_2743():
     sys.stdout.write(f"{len(input_val)}")
 
 
+def sentence_check_11091():
+    tot_num = int(sys.stdin.readline())
+    for idx in range(tot_num):
+        sentence = sys.stdin.readline()
+        dict_alphabet = dict.fromkeys(string.ascii_lowercase, 0)
+        print_char_sentence = ""
+        for char_sentence in sentence:
+            chk_key = char_sentence.lower()
+            if chk_key in dict_alphabet:
+                dict_alphabet[chk_key] += 1
+        for key, value in dict_alphabet.items():
+            if value == 0:
+                print_char_sentence += key
+        if print_char_sentence == "":
+            sys.stdout.write("pangram\n")
+        else:
+            sys.stdout.write(f"missing {print_char_sentence}\n")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -207,4 +227,5 @@ if __name__ == "__main__":
     # change_type_2998()
     # string_print_11721()
     # string_print_11719()
-    string_length_2743()
+    # string_length_2743()
+    sentence_check_11091()
