@@ -1,6 +1,7 @@
 import sys
 import math
 import string
+import re
 
 
 def chk_palindrome_10988():
@@ -210,6 +211,19 @@ def sentence_check_11091():
             sys.stdout.write(f"missing {print_char_sentence}\n")
 
 
+def find_emoticon_10769():
+    chk_sentence = sys.stdin.readline().rstrip()
+    happy_num = len(re.findall(r'\:\-\)', chk_sentence))
+    sad_num = len(re.findall(r'\:\-\(', chk_sentence))
+    if happy_num == 0 and sad_num == 0:
+        sys.stdout.write(f"none\n")
+    elif happy_num == sad_num:
+        sys.stdout.write(f"unsure\n")
+    elif happy_num > sad_num:
+        sys.stdout.write(f"happy\n")
+    elif happy_num < sad_num:
+        sys.stdout.write(f"sad\n")
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -228,4 +242,5 @@ if __name__ == "__main__":
     # string_print_11721()
     # string_print_11719()
     # string_length_2743()
-    sentence_check_11091()
+    # sentence_check_11091()
+    find_emoticon_10769()
