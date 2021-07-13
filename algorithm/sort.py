@@ -326,6 +326,16 @@ def sort_16212():
     sys.stdout.write(f"{' '.join(str(i) for i in each_arr)}")
 
 
+def sort_10867():
+    tot_case = int(sys.stdin.readline())
+    tot_arr = list(map(int, sys.stdin.readline().split()))
+    tot_dic = {}
+    for num in tot_arr:
+        if tot_dic.get(num) is None:
+            tot_dic[num] = 1
+    sys.stdout.write(f"{' '.join(str(i) for i in sorted(tot_dic.keys()))}")
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -349,4 +359,5 @@ if __name__ == "__main__":
     # sort_15819()
     # sort_15969()
     # sort_check_11536()
-    sort_16212()
+    # sort_16212()
+    sort_10867()
