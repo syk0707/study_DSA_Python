@@ -265,6 +265,23 @@ def add_1357():
     sys.stdout.write(f"{int(str(first_reverse_num + second_reverse_num)[::-1])}")
 
 
+def print_11586():
+    total_num = int(sys.stdin.readline())
+    tot_arr = []
+    for idx in range(total_num):
+        tot_arr.append(sys.stdin.readline().rstrip())
+    case_num = int(sys.stdin.readline())
+    if case_num == 3:
+        for sentence in reversed(tot_arr):
+            sys.stdout.write(f"{sentence}\n")
+    elif case_num == 1:
+        for sentence in tot_arr:
+            sys.stdout.write(f"{sentence}\n")
+    elif case_num == 2:
+        for sentence in tot_arr:
+            sys.stdout.write(f"{''.join(reversed(sentence))}\n")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -283,4 +300,5 @@ if __name__ == '__main__':
     # large_num_check_10570()
     # num_check_10797()
     # round_2033()
-    add_1357()
+    # add_1357()
+    print_11586()
