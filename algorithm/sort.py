@@ -336,6 +336,15 @@ def sort_10867():
     sys.stdout.write(f"{' '.join(str(i) for i in sorted(tot_dic.keys()))}")
 
 
+def sort_reverse_11931():
+    tot_case = int(sys.stdin.readline())
+    tot_arr = []
+    for idx in range(tot_case):
+        tot_arr.append(int(sys.stdin.readline()))
+    tot_arr.sort(reverse=True)
+    sys.stdout.write("\n".join(str(i) for i in tot_arr))
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -360,4 +369,5 @@ if __name__ == "__main__":
     # sort_15969()
     # sort_check_11536()
     # sort_16212()
-    sort_10867()
+    # sort_10867()
+    sort_reverse_11931()
