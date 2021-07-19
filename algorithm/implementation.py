@@ -282,6 +282,15 @@ def print_11586():
             sys.stdout.write(f"{''.join(reversed(sentence))}\n")
 
 
+def add_2729():
+    tot_case = int(sys.stdin.readline())
+    for idx in range(tot_case):
+        case_arr = list(map(int, sys.stdin.readline().split()))
+        first_num = "0b" + str(case_arr[0])
+        second_num = "0b" + str(case_arr[1])
+        sys.stdout.write(f"{'{0:b}'.format(int(first_num, 2) + int(second_num, 2))}\n")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -301,4 +310,5 @@ if __name__ == '__main__':
     # num_check_10797()
     # round_2033()
     # add_1357()
-    print_11586()
+    # print_11586()
+    add_2729()
