@@ -1,3 +1,4 @@
+import math
 import sys
 
 
@@ -21,6 +22,12 @@ def get_number_1037():
     sys.stdout.write(f"{small_num * large_num}")
 
 
+def get_number_2417():
+    num = int(sys.stdin.readline())
+    sys.stdout.write(f"{math.ceil(num ** 0.5)}")
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
-    get_number_1037()
+    # get_number_1037()
+    get_number_2417()
