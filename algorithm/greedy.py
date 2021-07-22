@@ -29,6 +29,31 @@ def cal_16435():
     sys.stdout.write(f"{first_num}")
 
 
+def reverse_1439():
+    case_num = sys.stdin.readline().rstrip()
+    slice_num = []
+    idx_num = 0
+    cnt_0 = 0
+    cnt_1 = 0
+    for idx in range(len(case_num) + 1):
+        if int(idx) == len(case_num) - 1:
+            slice_num.append(case_num[idx_num:])
+            if case_num[idx_num] == '0':
+                cnt_0 += 1
+            else:
+                cnt_1 += 1
+            break
+        if case_num[idx] != case_num[idx + 1]:
+            slice_num.append(case_num[idx_num: idx + 1])
+            if case_num[idx_num] == '0':
+                cnt_0 += 1
+            else:
+                cnt_1 += 1
+            idx_num = idx + 1
+    sys.stdout.write(f"{min(cnt_0, cnt_1)}")
+
+
 if __name__ == "__main__":
     # cal_2720()
-    cal_16435()
+    # cal_16435()
+    reverse_1439()
