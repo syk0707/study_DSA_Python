@@ -1,5 +1,6 @@
 import sys
 import math
+import string
 
 
 def rectangles_15232():
@@ -291,6 +292,21 @@ def add_2729():
         sys.stdout.write(f"{'{0:b}'.format(int(first_num, 2) + int(second_num, 2))}\n")
 
 
+def change_num(number, notation):
+    notation_array = string.digits + string.ascii_uppercase
+    ret_val = ''
+    while number > 0:
+        number, mod = divmod(number, notation)
+        str_mod = notation_array[mod]
+        ret_val += str_mod
+    return ret_val[::-1]
+
+
+def change_11005():
+    case_arr = list(map(int, sys.stdin.readline().split()))
+    sys.stdout.write(f"{change_num(case_arr[0], case_arr[1])}")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -311,4 +327,5 @@ if __name__ == '__main__':
     # round_2033()
     # add_1357()
     # print_11586()
-    add_2729()
+    # add_2729()
+    change_11005()
