@@ -345,6 +345,20 @@ def sort_reverse_11931():
     sys.stdout.write("\n".join(str(i) for i in tot_arr))
 
 
+def sort_10989():
+    tot_val = {}
+    tot_idx = int(sys.stdin.readline())
+    for idx in range(tot_idx):
+        each_num = int(sys.stdin.readline())
+        if tot_val.get(each_num) is None:
+            tot_val[each_num] = 1
+        else:
+            tot_val[each_num] += 1
+    for key in sorted(tot_val):
+        for val in range(tot_val[key]):
+            sys.stdout.write(f"{key}\n")
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -370,4 +384,5 @@ if __name__ == "__main__":
     # sort_check_11536()
     # sort_16212()
     # sort_10867()
-    sort_reverse_11931()
+    # sort_reverse_11931()
+    sort_10989()
