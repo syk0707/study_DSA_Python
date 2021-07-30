@@ -65,8 +65,21 @@ def check_possible_stack_1874():
     sys.stdout.write('\n'.join(ret_arr))
 
 
+def check_stack_10773():
+    tot_num = int(sys.stdin.readline())
+    stack_arr = []
+    for idx in range(tot_num):
+        case_num = int(sys.stdin.readline())
+        if case_num == 0 and len(stack_arr) > 0:
+            stack_arr.pop(len(stack_arr) - 1)
+        elif case_num != 0:
+            stack_arr.append(case_num)
+    sys.stdout.write(f"{sum(stack_arr)}")
+
+
 if __name__ == "__main__":
     # get_stack()
     # get_last_stop_14645()
     # stack_important_1966()
-    check_possible_stack_1874()
+    # check_possible_stack_1874()
+    check_stack_10773()
