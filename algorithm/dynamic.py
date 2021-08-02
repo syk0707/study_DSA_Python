@@ -57,9 +57,25 @@ def fibonacci_1003():
             sys.stdout.write(f"{dynamic_fibonacci(case_num - 1)} {dynamic_fibonacci(case_num)}\n")
 
 
+def divide_num_1463():
+    case_num = int(sys.stdin.readline())
+    dp_list = [0 for _ in range(case_num + 1)]
+    for i in range(2, case_num + 1):
+        dp_list[i] = dp_list[i - 1] + 1
+        two_quotient = i // 2
+        three_quotient = i // 3
+        if i % 2 == 0 and dp_list[i] > dp_list[two_quotient] + 1:
+            dp_list[i] = dp_list[two_quotient] + 1
+        if i % 3 == 0 and dp_list[i] > dp_list[three_quotient] + 1:
+            dp_list[i] = dp_list[three_quotient] + 1
+    else:
+        sys.stdout.write(f"{dp_list[case_num]}\n")
+
+
 if __name__ == "__main__":
     # print(recursive_fibonacci(4))
     # print(dynamic_fibonacci(5))
     # print(fibonacci_2748())
     # fibonacci_9625()
-    fibonacci_1003()
+    # fibonacci_1003()
+    divide_num_1463()
