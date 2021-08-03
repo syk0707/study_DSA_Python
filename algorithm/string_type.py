@@ -224,6 +224,16 @@ def find_emoticon_10769():
     elif happy_num < sad_num:
         sys.stdout.write(f"sad\n")
 
+
+def reverse_sentence_9093():
+    tot_idx = int(sys.stdin.readline())
+    for idx in range(tot_idx):
+        case_sentence = list(map(str, sys.stdin.readline().split()))
+        for word_sentence in case_sentence:
+            sys.stdout.write(f"{word_sentence[::-1]} ")
+        sys.stdout.write(f"\n")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -243,4 +253,5 @@ if __name__ == "__main__":
     # string_print_11719()
     # string_length_2743()
     # sentence_check_11091()
-    find_emoticon_10769()
+    # find_emoticon_10769()
+    reverse_sentence_9093()
