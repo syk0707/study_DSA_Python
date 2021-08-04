@@ -72,10 +72,27 @@ def divide_num_1463():
         sys.stdout.write(f"{dp_list[case_num]}\n")
 
 
+def add_num_9095():
+    def sum_9095(num):
+        if num == 1:
+            return 1
+        elif num == 2:
+            return 2
+        elif num == 3:
+            return 4
+        else:
+            return sum_9095(num - 1) + sum_9095(num - 2) + sum_9095(num - 3)
+    tot_idx = int(sys.stdin.readline())
+    for idx in range(tot_idx):
+        chk_num = int(sys.stdin.readline())
+        sys.stdout.write(f"{sum_9095(chk_num)}\n")
+
+
 if __name__ == "__main__":
     # print(recursive_fibonacci(4))
     # print(dynamic_fibonacci(5))
     # print(fibonacci_2748())
     # fibonacci_9625()
     # fibonacci_1003()
-    divide_num_1463()
+    # divide_num_1463()
+    add_num_9095()
