@@ -27,7 +27,24 @@ def get_number_2417():
     sys.stdout.write(f"{math.ceil(num ** 0.5)}")
 
 
+def cal_num_1629():
+    def recursive_1629(num, n, c):
+        if n == 1:
+            return num % c
+        if n % 2 == 0:
+            cal_n = recursive_1629(num, n // 2, c)
+            return cal_n * cal_n % c
+        else:
+            cal_n = recursive_1629(num, n // 2, c)
+            return cal_n * cal_n * num % c
+        return res
+    cal_list = list(map(int, sys.stdin.readline().split()))
+    sys.stdout.write(f"{recursive_1629(cal_list[0], cal_list[1], cal_list[2])}")
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
     # get_number_1037()
-    get_number_2417()
+    # get_number_2417()
+    cal_num_1629()
+
