@@ -1,5 +1,6 @@
 import collections
 import sys
+import heapq
 
 
 def queue_10845():
@@ -62,6 +63,34 @@ def dequeue_10866():
             sys.stdout.write(f"{-1}\n")
 
 
+def heap_11279():
+    tot_idx = int(sys.stdin.readline())
+    heap_dic = {}
+    heap_arr = []
+    max_num = 0
+    for idx in range(tot_idx):
+        num = int(sys.stdin.readline())
+        if num != 0 and heap_dic.get(num) is None:
+            heap_dic[num] = 1
+            heapq.heappush(heap_arr, num * -1)
+            max_num = heap_arr[0] * -1
+        elif num != 0 and heap_dic.get(num) is not None:
+            heap_dic[num] += 1
+        elif len(heap_dic) == 0:
+            sys.stdout.write(f"0\n")
+        else:
+            heap_dic[max_num] -= 1
+            sys.stdout.write(f"{max_num}\n")
+            if heap_dic[max_num] == 0:
+                heap_dic.pop(max_num, None)
+                heapq.heappop(heap_arr)
+                if len(heap_arr) > 0:
+                    max_num = heap_arr[0] * -1
+                else:
+                    max_num = 0
+
+
 if __name__ == "__main__":
-    #queue_10845()
-    dequeue_10866()
+    # queue_10845()
+    # dequeue_10866()
+    heap_11279()
