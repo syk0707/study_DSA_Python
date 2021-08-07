@@ -1,6 +1,7 @@
 import sys
 import math
 import string
+import calendar
 
 
 def rectangles_15232():
@@ -307,6 +308,25 @@ def change_11005():
     sys.stdout.write(f"{change_num(case_arr[0], case_arr[1])}")
 
 
+def cal_1924():
+    check_day = list(map(int, sys.stdin.readline().split()))
+    day_num = calendar.weekday(2007, check_day[0], check_day[1])
+    if day_num == 6:
+        sys.stdout.write("SUN")
+    elif day_num == 0:
+        sys.stdout.write("MON")
+    elif day_num == 1:
+        sys.stdout.write("TUE")
+    elif day_num == 2:
+        sys.stdout.write("WED")
+    elif day_num == 3:
+        sys.stdout.write("THU")
+    elif day_num == 4:
+        sys.stdout.write("FRI")
+    elif day_num == 5:
+        sys.stdout.write("SAT")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -328,4 +348,5 @@ if __name__ == '__main__':
     # add_1357()
     # print_11586()
     # add_2729()
-    change_11005()
+    # change_11005()
+    cal_1924()
