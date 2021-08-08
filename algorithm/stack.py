@@ -77,9 +77,31 @@ def check_stack_10773():
     sys.stdout.write(f"{sum(stack_arr)}")
 
 
+def check_ps_9012():
+    tot_idx = int(sys.stdin.readline())
+    for idx in range(tot_idx):
+        check_str = sys.stdin.readline()
+        start_ps = 0
+        end_ps = 0
+        is_ps = True
+        for check_char in check_str:
+            if check_char == "(":
+                start_ps += 1
+            elif check_char == ")":
+                end_ps += 1
+                if start_ps < end_ps:
+                    is_ps = False
+                    break
+        if is_ps and start_ps == end_ps:
+            sys.stdout.write("YES\n")
+        else:
+            sys.stdout.write("NO\n")
+
+
 if __name__ == "__main__":
     # get_stack()
     # get_last_stop_14645()
     # stack_important_1966()
     # check_possible_stack_1874()
-    check_stack_10773()
+    # check_stack_10773()
+    check_ps_9012()
