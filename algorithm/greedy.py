@@ -53,7 +53,29 @@ def reverse_1439():
     sys.stdout.write(f"{min(cnt_0, cnt_1)}")
 
 
+def greedy_11047():
+    input_arr = list(map(int, sys.stdin.readline().split()))
+    case_arr = []
+    for idx in range(input_arr[0]):
+        case_arr.append(int(sys.stdin.readline()))
+    case_arr.reverse()
+    cal_num = input_arr[1]
+    ret_num = 0
+    for case_num in case_arr:
+        if cal_num < case_num:
+            continue
+        else:
+            cal_quotient = cal_num // case_num
+            ret_num += cal_quotient
+            cal_num = cal_num - (case_num * cal_quotient)
+        if cal_num == 0:
+            break
+    sys.stdout.write(f"{ret_num}")
+
+
 if __name__ == "__main__":
     # cal_2720()
     # cal_16435()
-    reverse_1439()
+    # reverse_1439()
+    greedy_11047()
+
