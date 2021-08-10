@@ -40,6 +40,8 @@ I ask for your understanding even if there are many shortcomings.
 
 [Dynamic](algorithm/dynamic.py)
 
+[Geometry](algorithm/geometry.py)
+
 [Greedy](algorithm/greedy.py)
 
 [Implementation](algorithm/implementation.py)
