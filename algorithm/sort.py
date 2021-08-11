@@ -359,6 +359,20 @@ def sort_10989():
             sys.stdout.write(f"{key}\n")
 
 
+def sort_1181():
+    tot_idx = int(sys.stdin.readline())
+    input_dic = {}
+    for idx in range(tot_idx):
+        input_word = sys.stdin.readline()
+        len_word = len(input_word)
+        if input_dic.get(len_word) is None:
+            input_dic[len_word] = {}
+        input_dic[len_word][input_word] = 1
+    for key_dic in sorted(input_dic.keys()):
+        for output_word in sorted(input_dic[key_dic].keys()):
+            sys.stdout.write(f"{output_word}")
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -385,4 +399,5 @@ if __name__ == "__main__":
     # sort_16212()
     # sort_10867()
     # sort_reverse_11931()
-    sort_10989()
+    # sort_10989()
+    sort_1181()
