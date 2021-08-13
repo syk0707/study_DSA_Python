@@ -73,9 +73,26 @@ def greedy_11047():
     sys.stdout.write(f"{ret_num}")
 
 
+def greedy_11399():
+    tot_idx = int(sys.stdin.readline())
+    tot_arr = list(map(int, sys.stdin.readline().split()))
+    tot_arr.sort()
+    ret_val = 0
+    cnt_num = 0
+    for idx in range(tot_idx):
+        idx_arr = 0
+        while idx_arr <= cnt_num:
+            ret_val += tot_arr[idx_arr]
+            idx_arr += 1
+        cnt_num += 1
+    sys.stdout.write(f"{ret_val}")
+
+
 if __name__ == "__main__":
     # cal_2720()
     # cal_16435()
     # reverse_1439()
-    greedy_11047()
+    # greedy_11047()
+    greedy_11399()
+
 
