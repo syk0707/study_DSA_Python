@@ -373,6 +373,28 @@ def sort_1181():
             sys.stdout.write(f"{output_word}")
 
 
+def prog_sort_2540(people, limit):
+    answer = 0
+    people.sort()
+    start, end = 0, len(people) - 1
+
+    while start <= end:
+        answer += 1
+        if people[start] + people[end] <= limit:
+            start += 1
+        end -= 1
+    return answer
+
+
+def sort_15688():
+    tot_idx = int(sys.stdin.readline())
+    input_arr = []
+    for idx in range(tot_idx):
+        input_arr.append(int(sys.stdin.readline()))
+    input_arr.sort()
+    print("\n".join(map(str, input_arr)))
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -400,4 +422,6 @@ if __name__ == "__main__":
     # sort_10867()
     # sort_reverse_11931()
     # sort_10989()
-    sort_1181()
+    # sort_1181()
+    # prog_sort_2540([70, 80, 50], 100)
+    sort_15688()
