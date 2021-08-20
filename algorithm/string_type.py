@@ -42,7 +42,8 @@ def get_vowel_10987():
     str_vowel = sys.stdin.readline().rstrip()
     ret_val = 0
     for idx in range(len(str_vowel)):
-        if str_vowel[idx] == "a" or str_vowel[idx] == "e" or str_vowel[idx] == "i" or str_vowel[idx] == "o" or str_vowel[idx] == "u":
+        if str_vowel[idx] == "a" or str_vowel[idx] == "e" or str_vowel[idx] == "i" or str_vowel[idx] == "o" or \
+                str_vowel[idx] == "u":
             ret_val += 1
     print(ret_val)
 
@@ -174,7 +175,7 @@ def string_print_11721():
     for idx in range(tot_len):
         current_idx = idx * 10
         if idx != tot_len - 1:
-            sys.stdout.write(f"{input_sentence[current_idx:current_idx+10]}\n")
+            sys.stdout.write(f"{input_sentence[current_idx:current_idx + 10]}\n")
         else:
             sys.stdout.write(input_sentence[current_idx:len(input_sentence)])
 
@@ -234,6 +235,91 @@ def reverse_sentence_9093():
         sys.stdout.write(f"\n")
 
 
+def program_7232(s):
+    answer = 0
+    for idx in range(len(s)):
+        check_s = s[idx:len(s)] + s[0:idx]
+        is_circulation = True
+        start_bracket = 0
+        start_brace = 0
+        start_parentheses = 0
+        end_bracket = 0
+        end_brace = 0
+        end_parentheses = 0
+        for check_char in check_s:
+            if check_char == "[":
+                start_bracket += 1
+            elif check_char == "]" and start_bracket == end_bracket:
+                is_circulation = False
+                break
+            elif check_char == "]":
+                end_bracket += 1
+            elif check_char == "{":
+                start_brace += 1
+            elif check_char == "}" and start_brace == end_brace:
+                is_circulation = False
+                break
+            elif check_char == "}":
+                end_brace += 1
+            elif check_char == "(":
+                start_parentheses += 1
+            elif check_char == ")" and start_parentheses == end_parentheses:
+                is_circulation = False
+                break
+            elif check_char == ")":
+                end_parentheses += 1
+        if is_circulation:
+            answer += 1
+    sys.stdout.write(f"{answer}\n")
+
+
+def program_2413(p):
+    answer = ''
+    u = ''
+    v = ''
+
+    def is_same(word):
+        cnt_parentheses = 0
+        for word_char in word:
+            if word_char == '(':
+                cnt_parentheses += 1
+            else:
+                cnt_parentheses -= 1
+        if cnt_parentheses == 0:
+            return True
+        return False
+
+    def is_right(word):
+        chk_arr = [word[0]]
+        for idx in range(1, len(word)):
+            if len(chk_arr) == 0 or (chk_arr[-1] == '(' and word[idx] == '(') or chk_arr[-1] == ')':
+                chk_arr.append(word[idx])
+            else:
+                chk_arr.pop()
+        if len(chk_arr) == 0:
+            return True
+        return False
+
+    if is_right(p):
+        answer = p
+        return answer
+    for p_idx in range(2, len(p) + 1, 2):
+        if is_same(p[0:p_idx]):
+            u = p[0:p_idx]
+            v = p[p_idx:len(p)]
+            break
+    if is_right(u):
+        answer += u + program_2413(v)
+    else:
+        answer += '(' + program_2413(v) + ')'
+        for u_char in u[1:-1]:
+            if u_char == '(':
+                answer += ')'
+            else:
+                answer += '('
+    return answer
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -254,4 +340,6 @@ if __name__ == "__main__":
     # string_length_2743()
     # sentence_check_11091()
     # find_emoticon_10769()
-    reverse_sentence_9093()
+    # reverse_sentence_9093()
+    # program_7232("()[{[](){}[](){}}]")
+    program_2413("()())(()")

@@ -98,10 +98,32 @@ def check_ps_9012():
             sys.stdout.write("NO\n")
 
 
+def prog_cache_2435(cacheSize, cities):
+    answer = 0
+    cache_arr = []
+    for city_name in cities:
+        city_name = city_name.lower()
+        if 0 < cacheSize == len(cache_arr) and city_name not in cache_arr:
+            cache_arr.pop(0)
+            cache_arr.append(city_name)
+            answer += 5
+        elif 0 < cacheSize and city_name not in cache_arr:
+            cache_arr.append(city_name)
+            answer += 5
+        elif 0 < cacheSize and city_name in cache_arr:
+            cache_arr.pop(cache_arr.index(city_name))
+            cache_arr.append(city_name)
+            answer += 1
+        else:
+            answer += 5
+    return answer
+
+
 if __name__ == "__main__":
     # get_stack()
     # get_last_stop_14645()
     # stack_important_1966()
     # check_possible_stack_1874()
     # check_stack_10773()
-    check_ps_9012()
+    # check_ps_9012()
+    prog_cache_2435(3, ["Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"])
