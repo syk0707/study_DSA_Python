@@ -42,6 +42,15 @@ def cal_num_1629():
     sys.stdout.write(f"{recursive_1629(cal_list[0], cal_list[1], cal_list[2])}")
 
 
+def prog_add_num_278():
+    def solution(n):
+        answer = 0
+        for each_num in str(n):
+            answer += int(each_num)
+        print(answer)
+        return answer
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
     # get_number_1037()

@@ -235,6 +235,47 @@ def reverse_sentence_9093():
         sys.stdout.write(f"\n")
 
 
+def prog_solution_7777(s):
+    answer = ''
+    word = ''
+    for char_s in s:
+        if char_s.isnumeric():
+            answer += char_s
+            continue
+        word += char_s
+        if word == 'zero':
+            answer += '0'
+            word = ''
+        if word == 'one':
+            answer += '1'
+            word = ''
+        if word == 'two':
+            answer += '2'
+            word = ''
+        if word == 'three':
+            answer += '3'
+            word = ''
+        if word == 'four':
+            answer += '4'
+            word = ''
+        if word == 'five':
+            answer += '5'
+            word = ''
+        if word == 'six':
+            answer += '6'
+            word = ''
+        if word == 'seven':
+            answer += '7'
+            word = ''
+        if word == 'eight':
+            answer += '8'
+            word = ''
+        if word == 'nine':
+            answer += '9'
+            word = ''
+    return int(answer)
+    
+    
 def program_7232(s):
     answer = 0
     for idx in range(len(s)):
@@ -341,5 +382,6 @@ if __name__ == "__main__":
     # sentence_check_11091()
     # find_emoticon_10769()
     # reverse_sentence_9093()
+    # print(prog_solution_7777("one4seveneight"))
     # program_7232("()[{[](){}[](){}}]")
     program_2413("()())(()")
