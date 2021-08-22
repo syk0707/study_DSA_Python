@@ -327,6 +327,22 @@ def cal_1924():
         sys.stdout.write("SAT")
 
 
+def string_11655():
+    sentence = sys.stdin.readline()
+    ret_sentence = ''
+    for character in sentence:
+        ascii_num = ord(character)
+        if 65 <= ascii_num <= 77 or 97 <= ascii_num <= 109:
+            ret_sentence += chr(ascii_num + 13)
+        elif 78 <= ascii_num <= 90:
+            ret_sentence += chr(65 + (13 - (90 - ascii_num) - 1))
+        elif 110 <= ascii_num <= 122:
+            ret_sentence += chr(97 + (13 - (122 - ascii_num) - 1))
+        else:
+            ret_sentence += character
+    sys.stdout.write(f"{ret_sentence}")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -349,4 +365,5 @@ if __name__ == '__main__':
     # print_11586()
     # add_2729()
     # change_11005()
-    cal_1924()
+    # cal_1924()
+    string_11655()
