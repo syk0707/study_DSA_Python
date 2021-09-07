@@ -343,6 +343,18 @@ def string_11655():
     sys.stdout.write(f"{ret_sentence}")
 
 
+def string_10808():
+    input_word = sys.stdin.readline().rstrip()
+    input_dict = {}
+    for each_num in range(97, 123):
+        input_dict[each_num] = 0
+    for each_word in input_word:
+        ascii_num = ord(each_word)
+        input_dict[ascii_num] += 1
+    for each_val in input_dict.values():
+        sys.stdout.write(f"{each_val} ")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -366,4 +378,5 @@ if __name__ == '__main__':
     # add_2729()
     # change_11005()
     # cal_1924()
-    string_11655()
+    # string_11655()
+    string_10808()
