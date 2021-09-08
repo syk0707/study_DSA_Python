@@ -51,9 +51,15 @@ def prog_add_num_278():
         return answer
 
 
+def cal_num_13706():
+    input_num = int(sys.stdin.readline())
+    sys.stdout.write(f"{math.isqrt(input_num)}")
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
     # get_number_1037()
     # get_number_2417()
-    cal_num_1629()
+    # cal_num_1629()
+    cal_num_13706()
 
