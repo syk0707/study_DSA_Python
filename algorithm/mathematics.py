@@ -56,10 +56,22 @@ def cal_num_13706():
     sys.stdout.write(f"{math.isqrt(input_num)}")
 
 
+def cal_num_1292():
+    input_arr = list(map(int, sys.stdin.readline().split()))
+    tot_arr = []
+    ret_num = 0
+    for i in range(101):
+        for num in range(0, i):
+            tot_arr.append(i)
+    for tot_idx in range(input_arr[0] - 1, input_arr[1]):
+        ret_num += tot_arr[tot_idx]
+    sys.stdout.write(f"{ret_num}")
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
     # get_number_1037()
     # get_number_2417()
     # cal_num_1629()
-    cal_num_13706()
-
+    # cal_num_13706()
+    cal_num_1292()
