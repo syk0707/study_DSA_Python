@@ -2,6 +2,7 @@ import sys
 import math
 import string
 import calendar
+import hashlib
 
 
 def rectangles_15232():
@@ -355,6 +356,12 @@ def string_10808():
         sys.stdout.write(f"{each_val} ")
 
 
+def string_encode_10930():
+    input_str = sys.stdin.readline().rstrip()
+    ret_hash = hashlib.sha256(input_str.encode())
+    sys.stdout.write(f"{ret_hash.hexdigest()}")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -379,4 +386,5 @@ if __name__ == '__main__':
     # change_11005()
     # cal_1924()
     # string_11655()
-    string_10808()
+    # string_10808()
+    string_encode_10930()
