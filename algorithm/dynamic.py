@@ -88,6 +88,29 @@ def add_num_9095():
         sys.stdout.write(f"{sum_9095(chk_num)}\n")
 
 
+def fibonacci_2747():
+    def add_num(first_num, second_num):
+        return first_num + second_num
+    case_num = int(sys.stdin.readline())
+    first = 1
+    second = 1
+    total = 0
+    if case_num == 0:
+        sys.stdout.write("0")
+        return
+    elif case_num == 1:
+        sys.stdout.write("1")
+        return
+    elif case_num == 2:
+        sys.stdout.write("1")
+        return
+    for idx in range(2, case_num):
+        total = add_num(first, second)
+        first = second
+        second = total
+    sys.stdout.write(f"{total}")
+
+
 if __name__ == "__main__":
     # print(recursive_fibonacci(4))
     # print(dynamic_fibonacci(5))
@@ -95,4 +118,5 @@ if __name__ == "__main__":
     # fibonacci_9625()
     # fibonacci_1003()
     # divide_num_1463()
-    add_num_9095()
+    # add_num_9095()
+    fibonacci_2747()
