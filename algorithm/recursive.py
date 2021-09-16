@@ -71,6 +71,33 @@ def convert_binary():
     chk_binary(num, [])
 
 
+def num_1074():
+    ret_val = 0
+    tot_num, r, c = list(map(int, sys.stdin.readline().split()))
+    while tot_num > 0:
+        square = (2 ** tot_num) // 2
+        if tot_num > 1:
+            if r < square <= c:
+                ret_val += square ** 2
+                c -= square
+            elif r >= square > c:
+                ret_val += (square ** 2) * 2
+                r -= square
+            elif square <= r and square <= c:
+                ret_val += (square ** 2) * 3
+                r -= square
+                c -= square
+        elif tot_num == 1:
+            if r == 0 and c == 1:
+                ret_val += 1
+            elif r == 1 and c == 0:
+                ret_val += 2
+            elif r == 1 and c == 1:
+                ret_val += 3
+        tot_num -= 1
+    sys.stdout.write(f"{ret_val}")
+
+
 if __name__ == "__main__":
     # print(factorial(10))
     # print(factorial2(10))
@@ -78,4 +105,6 @@ if __name__ == "__main__":
     # print(palindrome("test"))
     # func(3)
     # print(func2(5))
-    convert_binary()
+    # convert_binary()
+    num_1074()
+
