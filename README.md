@@ -32,6 +32,8 @@ I ask for your understanding even if there are many shortcomings.
 
 [Back Tracking](algorithm/back_tracking.py)
 
+[Basic Implementation](algorithm/basic_implementation.py)
+
 [Basic Mathematics](algorithm/basic_mathematics.py)
 
 [BFS & DFS](algorithm/bfs_dfs.py)
