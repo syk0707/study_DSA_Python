@@ -409,6 +409,20 @@ def sort_11650():
             sys.stdout.write(f"{each_key} {each_val}\n")
 
 
+def sort_11651():
+    tot_idx = int(sys.stdin.readline())
+    tot_dic = {}
+    for idx in range(tot_idx):
+        each_arr = list(map(int, sys.stdin.readline().split()))
+        if tot_dic.get(each_arr[1]) is None:
+            tot_dic[each_arr[1]] = [each_arr[0]]
+        else:
+            tot_dic[each_arr[1]].append(each_arr[0])
+    for each_key in sorted(tot_dic.keys()):
+        for num in sorted(tot_dic[each_key]):
+            sys.stdout.write(f"{num} {each_key}\n")
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -439,4 +453,5 @@ if __name__ == "__main__":
     # sort_1181()
     # prog_sort_2540([70, 80, 50], 100)
     # sort_15688()
-    sort_11650()
+    # sort_11650()
+    sort_11651()
