@@ -88,11 +88,42 @@ def greedy_11399():
     sys.stdout.write(f"{ret_val}")
 
 
+def greedy_5585():
+    minus_num = int(sys.stdin.readline())
+    cal_num = 1000 - minus_num
+    tot_num = 0
+    if cal_num // 500 > 0:
+        share_num = cal_num // 500
+        tot_num += share_num
+        cal_num = cal_num - (500 * share_num)
+    if cal_num // 100 > 0:
+        share_num = cal_num // 100
+        tot_num += share_num
+        cal_num = cal_num - (100 * share_num)
+    if cal_num // 50 > 0:
+        share_num = cal_num // 50
+        tot_num += share_num
+        cal_num = cal_num - (50 * share_num)
+    if cal_num // 10 > 0:
+        share_num = cal_num // 10
+        tot_num += share_num
+        cal_num = cal_num - (10 * share_num)
+    if cal_num // 5 > 0:
+        share_num = cal_num // 5
+        tot_num += share_num
+        cal_num = cal_num - (5 * share_num)
+    if cal_num // 1 > 0:
+        share_num = cal_num // 1
+        tot_num += share_num
+        cal_num = cal_num - (1 * share_num)
+    sys.stdout.write(f"{tot_num}")
+
+
 if __name__ == "__main__":
     # cal_2720()
     # cal_16435()
     # reverse_1439()
     # greedy_11047()
-    greedy_11399()
-
+    # greedy_11399()
+    greedy_5585()
 
