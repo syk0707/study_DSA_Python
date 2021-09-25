@@ -111,6 +111,26 @@ def fibonacci_2747():
     sys.stdout.write(f"{total}")
 
 
+def fibonacci_10826():
+    def add_num(num_1, num_2):
+        return num_1 + num_2
+    tot_num = int(sys.stdin.readline())
+    add_num_1 = 1
+    add_num_2 = 1
+    ret_val = 0
+    if tot_num == 0:
+        sys.stdout.write("0")
+        return
+    elif tot_num == 1 or tot_num == 2:
+        sys.stdout.write("1")
+        return
+    for idx in range(2, tot_num):
+        ret_val = add_num(add_num_1, add_num_2)
+        add_num_1 = add_num_2
+        add_num_2 = ret_val
+    sys.stdout.write(f"{ret_val}")
+
+
 if __name__ == "__main__":
     # print(recursive_fibonacci(4))
     # print(dynamic_fibonacci(5))
@@ -119,4 +139,5 @@ if __name__ == "__main__":
     # fibonacci_1003()
     # divide_num_1463()
     # add_num_9095()
-    fibonacci_2747()
+    # fibonacci_2747()
+    fibonacci_10826()
