@@ -1,4 +1,5 @@
 import sys
+import copy
 
 
 def black_jack_2798():
@@ -43,7 +44,45 @@ def get_num_2501():
         sys.stdout.write(f"{ans_arr[case_arr[1] - 1]}")
 
 
+def cal_zero_7490():
+    tot_idx = int(sys.stdin.readline())
+    tot_list = []
+
+    def recursive_cal(arr, n):
+        if len(arr) == n:
+            tot_list.append(copy.deepcopy(arr))
+            return
+        arr.append(' ')
+        recursive_cal(arr, n)
+        arr.pop()
+
+        arr.append('+')
+        recursive_cal(arr, n)
+        arr.pop()
+
+        arr.append('-')
+        recursive_cal(arr, n)
+        arr.pop()
+
+    for idx in range(tot_idx):
+        tot_list = []
+        num = int(sys.stdin.readline())
+        recursive_cal([], num - 1)
+
+        num_list = [i for i in range(1, num + 1)]
+
+        for each_case in tot_list:
+            print_str = ""
+            for i in range(num - 1):
+                print_str += str(num_list[i]) + each_case[i]
+            print_str += str(num_list[-1])
+            if eval(print_str.replace(" ", "")) == 0:
+                sys.stdout.write(f"{print_str}\n")
+            sys.stdout.write(f"\n")
+
+
 if __name__ == "__main__":
     # black_jack_2798()
     # get_num_14914()
-    get_num_2501()
+    # get_num_2501()
+    cal_zero_7490()
