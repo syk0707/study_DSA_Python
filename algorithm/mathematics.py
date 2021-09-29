@@ -68,10 +68,16 @@ def cal_num_1292():
     sys.stdout.write(f"{ret_num}")
 
 
+def cal_num_2745():
+    case_arr = list(map(str, sys.stdin.readline().split()))
+    sys.stdout.write(f"{int(case_arr[0], int(case_arr[1]))}")
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
     # get_number_1037()
     # get_number_2417()
     # cal_num_1629()
     # cal_num_13706()
-    cal_num_1292()
+    # cal_num_1292()
+    cal_num_2745()
