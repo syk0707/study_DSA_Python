@@ -73,6 +73,11 @@ def cal_num_2745():
     sys.stdout.write(f"{int(case_arr[0], int(case_arr[1]))}")
 
 
+def cal_num_1373():
+    num = int(sys.stdin.readline().rstrip(), 2)
+    sys.stdout.write(f"{oct(num)[2:]}")
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
     # get_number_1037()
@@ -80,4 +85,5 @@ if __name__ == "__main__":
     # cal_num_1629()
     # cal_num_13706()
     # cal_num_1292()
-    cal_num_2745()
+    # cal_num_2745()
+    cal_num_1373()
