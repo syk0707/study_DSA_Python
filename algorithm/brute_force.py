@@ -1,5 +1,6 @@
 import sys
 import copy
+import itertools
 
 
 def black_jack_2798():
@@ -81,8 +82,28 @@ def cal_zero_7490():
             sys.stdout.write(f"\n")
 
 
+def get_sum_2309():
+    tot_arr = []
+    idx_arr = list(itertools.combinations([i for i in range(9)], 7))
+    is_get_case = False
+    for idx in range(9):
+        tot_arr.append(int(sys.stdin.readline()))
+    for each_case in idx_arr:
+        sum_num = 0
+        case_arr = []
+        for idx in each_case:
+            sum_num += tot_arr[idx]
+            case_arr.append(tot_arr[idx])
+        if sum_num == 100:
+            break
+    case_arr.sort()
+    for each_num in case_arr:
+        sys.stdout.write(f"{each_num}\n")
+
+
 if __name__ == "__main__":
     # black_jack_2798()
     # get_num_14914()
     # get_num_2501()
-    cal_zero_7490()
+    # cal_zero_7490()
+    get_sum_2309()
