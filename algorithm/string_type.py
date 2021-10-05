@@ -361,6 +361,17 @@ def program_2413(p):
     return answer
 
 
+def string_change_2744():
+    input_str = sys.stdin.readline()
+    ret_val = ""
+    for input_char in input_str:
+        if input_char.isupper():
+            ret_val += input_char.lower()
+        else:
+            ret_val += input_char.upper()
+    sys.stdout.write(f"{ret_val}")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -384,4 +395,6 @@ if __name__ == "__main__":
     # reverse_sentence_9093()
     # print(prog_solution_7777("one4seveneight"))
     # program_7232("()[{[](){}[](){}}]")
-    program_2413("()())(()")
+    # program_2413("()())(()")
+    string_change_2744()
+
