@@ -423,6 +423,13 @@ def sort_11651():
             sys.stdout.write(f"{num} {each_key}\n")
 
 
+def sort_11004():
+    input_arr = list(map(int, sys.stdin.readline().rstrip().split()))
+    case_arr = list(map(int, sys.stdin.readline().rstrip().split()))
+    case_arr = sorted(case_arr)
+    sys.stdout.write(f"{case_arr[input_arr[1] - 1]}")
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -454,4 +461,5 @@ if __name__ == "__main__":
     # prog_sort_2540([70, 80, 50], 100)
     # sort_15688()
     # sort_11650()
-    sort_11651()
+    # sort_11651()
+    sort_11004()
