@@ -119,11 +119,28 @@ def greedy_5585():
     sys.stdout.write(f"{tot_num}")
 
 
+def search_1543():
+    total_str = sys.stdin.readline().rstrip()
+    search_str = sys.stdin.readline().rstrip()
+    idx = 0
+    ret_val = 0
+    while True:
+        search_len = len(search_str)
+        if total_str[idx:idx + search_len] == search_str:
+            ret_val += 1
+            idx += search_len
+        else:
+            idx += 1
+        if len(total_str) - idx < len(search_str):
+            break
+    sys.stdout.write(f"{ret_val}\n")
+
+
 if __name__ == "__main__":
     # cal_2720()
     # cal_16435()
     # reverse_1439()
     # greedy_11047()
     # greedy_11399()
-    greedy_5585()
-
+    # greedy_5585()
+    search_1543()
