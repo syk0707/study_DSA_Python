@@ -362,6 +362,22 @@ def string_encode_10930():
     sys.stdout.write(f"{ret_hash.hexdigest()}")
 
 
+def count_1568():
+    input_num = int(sys.stdin.readline())
+    add_num = 0
+    tot_num = 0
+    tot_sec = 0
+    while True:
+        if input_num <= tot_num:
+            break
+        add_num += 1
+        tot_sec += 1
+        if add_num > input_num - tot_num:
+            add_num = 1
+        tot_num += add_num
+    sys.stdout.write(f"{tot_sec}\n")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -387,4 +403,5 @@ if __name__ == '__main__':
     # cal_1924()
     # string_11655()
     # string_10808()
-    string_encode_10930()
+    # string_encode_10930()
+    count_1568()
