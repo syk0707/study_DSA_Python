@@ -118,10 +118,32 @@ def get_sum_3040():
         sys.stdout.write(f"{each_num}\n")
 
 
+def get_view_1668():
+    tot_idx = int(sys.stdin.readline())
+    case_arr = []
+    left_num = 1
+    right_num = 1
+    for idx in range(tot_idx):
+        case_arr.append(int(sys.stdin.readline()))
+        if idx == 0:
+            first_num = case_arr[0]
+        if idx >= 1 and case_arr[idx] > first_num:
+            left_num += 1
+            first_num = case_arr[idx]
+    case_arr.reverse()
+    first_num = case_arr[0]
+    for case_idx in range(tot_idx):
+        if case_idx >= 1 and case_arr[case_idx] > first_num:
+            right_num += 1
+            first_num = case_arr[case_idx]
+    sys.stdout.write(f"{left_num}\n{right_num}")
+
+
 if __name__ == "__main__":
     # black_jack_2798()
     # get_num_14914()
     # get_num_2501()
     # cal_zero_7490()
     # get_sum_2309()
-    get_sum_3040()
+    # get_sum_3040()
+    get_view_1668()
