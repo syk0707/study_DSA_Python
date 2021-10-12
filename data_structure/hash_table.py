@@ -107,6 +107,26 @@ def network_4195():
             sys.stdout.write(f"{num_dic[find_network(friends[0], case_dic)]}\n")
 
 
+def top_1302():
+    tot_idx = int(sys.stdin.readline())
+    tot_dic = {}
+    max_val = 0
+    for idx in range(tot_idx):
+        each_input = sys.stdin.readline().rstrip()
+        if tot_dic.get(each_input) is None:
+            tot_dic[each_input] = 1
+        else:
+            tot_dic[each_input] += 1
+            if max_val < tot_dic[each_input]:
+                max_val = tot_dic[each_input]
+    ret_arr = []
+    for key, value in tot_dic.items():
+        if value == max_val:
+            ret_arr.append(key)
+    ret_arr.sort()
+    sys.stdout.write(f"{ret_arr[0]}")
+
+
 if __name__ == "__main__":
     # print(hash('Dave') % 8)
     # print(hash('Dd') % 8)
@@ -115,4 +135,5 @@ if __name__ == "__main__":
     # save_data('Data', '3301023010')
     # read_data('Dd')
     # find_str_17219()
-    network_4195()
+    # network_4195()
+    top_1302()
