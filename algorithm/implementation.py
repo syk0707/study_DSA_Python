@@ -378,6 +378,26 @@ def count_1568():
     sys.stdout.write(f"{tot_sec}\n")
 
 
+def get_num_1236():
+    input_arr = list(map(int, sys.stdin.readline().split()))
+    ret_num = 0
+    vertical_dic = {i + 1: 0 for i in range(input_arr[1])}
+    for idx in range(input_arr[0]):
+        line_str = sys.stdin.readline()
+        # 가로
+        if line_str.find("X") == -1:
+            ret_num += 1
+        v_idx = 0
+        # 세로
+        while v_idx > -1:
+            v_idx = line_str.find('X', v_idx)
+            if vertical_dic.get(v_idx + 1) is not None:
+                del vertical_dic[v_idx + 1]
+            if v_idx > -1:
+                v_idx += 1
+    sys.stdout.write(f"{max(ret_num, len(vertical_dic.keys()))}")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -404,4 +424,5 @@ if __name__ == '__main__':
     # string_11655()
     # string_10808()
     # string_encode_10930()
-    count_1568()
+    # count_1568()
+    get_num_1236()
