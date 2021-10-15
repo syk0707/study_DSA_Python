@@ -119,6 +119,16 @@ def prog_cache_2435(cacheSize, cities):
     return answer
 
 
+def stack_12605():
+    tot_num = int(sys.stdin.readline())
+    for num in range(tot_num):
+        str_arr = list(map(str, sys.stdin.readline().rstrip().split()))
+        sys.stdout.write(f"Case #{num + 1}: ")
+        while str_arr:
+            sys.stdout.write(f"{str_arr.pop()} ")
+        sys.stdout.write(f"\n")
+
+
 if __name__ == "__main__":
     # get_stack()
     # get_last_stop_14645()
@@ -126,4 +136,5 @@ if __name__ == "__main__":
     # check_possible_stack_1874()
     # check_stack_10773()
     # check_ps_9012()
-    prog_cache_2435(3, ["Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"])
+    # prog_cache_2435(3, ["Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"])
+    stack_12605()
