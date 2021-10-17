@@ -136,6 +136,24 @@ def search_1543():
     sys.stdout.write(f"{ret_val}\n")
 
 
+def prog_42883():
+    number = "1294"
+    k = 2
+    arr = []
+    for num in number:
+        while arr and num > arr[-1]:
+            if k > 0:
+                arr.pop()
+                k -= 1
+            else:
+                break
+        arr.append(num)
+    if k > 0:
+        for num in range(k):
+            arr.pop()
+    return "".join(arr)
+
+
 if __name__ == "__main__":
     # cal_2720()
     # cal_16435()
@@ -143,4 +161,5 @@ if __name__ == "__main__":
     # greedy_11047()
     # greedy_11399()
     # greedy_5585()
-    search_1543()
+    # search_1543()
+    prog_42883()
