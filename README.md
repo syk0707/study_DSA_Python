@@ -38,6 +38,8 @@ I ask for your understanding even if there are many shortcomings.
 
 [BFS & DFS](algorithm/bfs_dfs.py)
 
+[Binary Search](algorithm/binary_search.py)
+
 [Brute Force](algorithm/brute_force.py)
 
 [Dynamic](algorithm/dynamic.py)
