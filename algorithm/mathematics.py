@@ -78,6 +78,11 @@ def cal_num_1373():
     sys.stdout.write(f"{oct(num)[2:]}")
 
 
+def cal_num_2420():
+    num_arr = list(map(int, sys.stdin.readline().split()))
+    sys.stdout.write(f"{abs(num_arr[0] - num_arr[1])}")
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
     # get_number_1037()
@@ -86,4 +91,5 @@ if __name__ == "__main__":
     # cal_num_13706()
     # cal_num_1292()
     # cal_num_2745()
-    cal_num_1373()
+    # cal_num_1373()
+    cal_num_2420()
