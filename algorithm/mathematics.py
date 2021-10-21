@@ -1,5 +1,6 @@
 import math
 import sys
+import itertools
 
 
 def strange_multiplication_1225():
@@ -83,6 +84,25 @@ def cal_num_2420():
     sys.stdout.write(f"{abs(num_arr[0] - num_arr[1])}")
 
 
+def cal_num_10610():
+    input_num = sys.stdin.readline().rstrip()
+    max_num = -1
+    if "0" not in input_num:
+        sys.stdout.write(f"{max_num}")
+        return
+    else:
+        tot_num = 0
+        input_arr = list(input_num)
+        for each_num in input_arr:
+            tot_num += int(each_num)
+        if tot_num % 3 != 0:
+            sys.stdout.write(f"{max_num}")
+            return
+        else:
+            input_arr.sort(reverse=True)
+            sys.stdout.write(f"{''.join(input_arr)}")
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
     # get_number_1037()
@@ -92,4 +112,5 @@ if __name__ == "__main__":
     # cal_num_1292()
     # cal_num_2745()
     # cal_num_1373()
-    cal_num_2420()
+    # cal_num_2420()
+    cal_num_10610()
