@@ -103,6 +103,16 @@ def cal_num_10610():
             sys.stdout.write(f"{''.join(input_arr)}")
 
 
+def math_5988():
+    tot_num = int(sys.stdin.readline())
+    for idx in range(tot_num):
+        case_num = int(sys.stdin.readline())
+        if case_num % 2 == 0:
+            sys.stdout.write(f"even\n")
+        else:
+            sys.stdout.write(f"odd\n")
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
     # get_number_1037()
@@ -113,4 +123,5 @@ if __name__ == "__main__":
     # cal_num_2745()
     # cal_num_1373()
     # cal_num_2420()
-    cal_num_10610()
+    # cal_num_10610()
+    math_5988()
