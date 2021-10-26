@@ -113,6 +113,23 @@ def math_5988():
             sys.stdout.write(f"odd\n")
 
 
+def math_9506():
+    while True:
+        input_num = int(sys.stdin.readline())
+        if input_num == -1:
+            break
+        cal_num = 0
+        cal_arr = []
+        for idx in range(1, int(input_num / 2) + 1):
+            if input_num % idx == 0:
+                cal_num += idx
+                cal_arr.append(str(idx))
+        if input_num == cal_num:
+            sys.stdout.write(f"{input_num} = {' + '.join(cal_arr)}\n")
+        else:
+            sys.stdout.write(f"{input_num} is NOT perfect.\n")
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
     # get_number_1037()
@@ -124,4 +141,5 @@ if __name__ == "__main__":
     # cal_num_1373()
     # cal_num_2420()
     # cal_num_10610()
-    math_5988()
+    # math_5988()
+    math_9506()
