@@ -372,6 +372,22 @@ def string_change_2744():
     sys.stdout.write(f"{ret_val}")
 
 
+def string_8595():
+    char_len = int(sys.stdin.readline())
+    tot_word = sys.stdin.readline().rstrip()
+    tot_num = 0
+    case_num_str = ''
+    for each_char in tot_word:
+        if each_char.isnumeric():
+            case_num_str += each_char
+        elif case_num_str != '':
+            tot_num += int(case_num_str)
+            case_num_str = ''
+    if case_num_str != '' and case_num_str.isnumeric():
+        tot_num += int(case_num_str)
+    sys.stdout.write(f"{tot_num}")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -396,5 +412,6 @@ if __name__ == "__main__":
     # print(prog_solution_7777("one4seveneight"))
     # program_7232("()[{[](){}[](){}}]")
     # program_2413("()())(()")
-    string_change_2744()
+    # string_change_2744()
+    string_8595()
 
