@@ -398,6 +398,19 @@ def get_num_1236():
     sys.stdout.write(f"{max(ret_num, len(vertical_dic.keys()))}")
 
 
+def cal_num_1453():
+    input_num = int(sys.stdin.readline())
+    input_arr = list(map(int, sys.stdin.readline().split()))
+    input_dic = {}
+    except_num = 0
+    for num in input_arr:
+        if input_dic.get(num) is None:
+            input_dic[num] = 1
+        else:
+            except_num += 1
+    sys.stdout.write(f"{except_num}")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -425,4 +438,5 @@ if __name__ == '__main__':
     # string_10808()
     # string_encode_10930()
     # count_1568()
-    get_num_1236()
+    # get_num_1236()
+    cal_num_1453()
