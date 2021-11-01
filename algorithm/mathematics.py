@@ -130,6 +130,13 @@ def math_9506():
             sys.stdout.write(f"{input_num} is NOT perfect.\n")
 
 
+def math_10822():
+    input_str = sys.stdin.readline().rstrip()
+    input_arr = input_str.split(',')
+    input_arr = map(int, input_arr)
+    sys.stdout.write(f"{sum(input_arr)}")
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
     # get_number_1037()
@@ -142,4 +149,5 @@ if __name__ == "__main__":
     # cal_num_2420()
     # cal_num_10610()
     # math_5988()
-    math_9506()
+    # math_9506()
+    math_10822()
