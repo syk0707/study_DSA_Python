@@ -137,6 +137,19 @@ def math_10822():
     sys.stdout.write(f"{sum(input_arr)}")
 
 
+def math_1075():
+    input_num = list(sys.stdin.readline().rstrip())
+    divide_num = int(sys.stdin.readline())
+    input_num[len(input_num) - 1] = '0'
+    input_num[len(input_num) - 2] = '0'
+    input_num = int("".join(input_num))
+    for cal_num in range(input_num, input_num + 100, 1):
+        if cal_num % divide_num == 0:
+            cal_list = list(str(cal_num))
+            sys.stdout.write(f"{cal_list[len(cal_list) - 2]}{cal_list[len(cal_list) - 1]}\n")
+            break
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
     # get_number_1037()
@@ -150,4 +163,5 @@ if __name__ == "__main__":
     # cal_num_10610()
     # math_5988()
     # math_9506()
-    math_10822()
+    # math_10822()
+    math_1075()
