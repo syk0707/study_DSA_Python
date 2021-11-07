@@ -150,6 +150,17 @@ def math_1075():
             break
 
 
+def math_2587():
+    input_arr = []
+    tot_num = 0
+    for idx in range(5):
+        each_input = int(sys.stdin.readline())
+        input_arr.append(each_input)
+        tot_num += each_input
+    input_arr.sort()
+    sys.stdout.write(f"{int(tot_num / 5)}\n{input_arr[2]}")
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
     # get_number_1037()
@@ -164,4 +175,5 @@ if __name__ == "__main__":
     # math_5988()
     # math_9506()
     # math_10822()
-    math_1075()
+    # math_1075()
+    math_2587()
