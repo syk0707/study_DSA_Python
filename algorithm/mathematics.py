@@ -161,6 +161,20 @@ def math_2587():
     sys.stdout.write(f"{int(tot_num / 5)}\n{input_arr[2]}")
 
 
+def math_1247():
+    for idx in range(3):
+        case_num = int(sys.stdin.readline())
+        tot_num = 0
+        for case_idx in range(case_num):
+            tot_num += int(sys.stdin.readline())
+        if tot_num > 0:
+            sys.stdout.write("+\n")
+        elif tot_num < 0:
+            sys.stdout.write("-\n")
+        else:
+            sys.stdout.write("0\n")
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
     # get_number_1037()
@@ -176,4 +190,5 @@ if __name__ == "__main__":
     # math_9506()
     # math_10822()
     # math_1075()
-    math_2587()
+    # math_2587()
+    math_1247()
