@@ -388,6 +388,20 @@ def string_8595():
     sys.stdout.write(f"{tot_num}")
 
 
+def num_1264():
+    while True:
+        str_vowel = sys.stdin.readline().rstrip()
+        if str_vowel == "#":
+            break
+            return
+        ret_val = 0
+        for idx in range(len(str_vowel)):
+            if str_vowel[idx] == "a" or str_vowel[idx] == "e" or str_vowel[idx] == "i" or str_vowel[idx] == "o" or str_vowel[idx] == "u" \
+                    or str_vowel[idx] == "A" or str_vowel[idx] == "E" or str_vowel[idx] == "I" or str_vowel[idx] == "O" or str_vowel[idx] == "U":
+                ret_val += 1
+        sys.stdout.write(f"{ret_val}\n")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -413,5 +427,7 @@ if __name__ == "__main__":
     # program_7232("()[{[](){}[](){}}]")
     # program_2413("()())(()")
     # string_change_2744()
-    string_8595()
+    # string_8595()
+    num_1264()
+
 
