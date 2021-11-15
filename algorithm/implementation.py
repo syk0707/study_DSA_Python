@@ -3,6 +3,7 @@ import math
 import string
 import calendar
 import hashlib
+from collections import Counter
 
 
 def rectangles_15232():
@@ -411,6 +412,17 @@ def cal_num_1453():
     sys.stdout.write(f"{except_num}")
 
 
+def get_num_10807():
+    tot_num = int(sys.stdin.readline())
+    tot_arr = list(map(int, sys.stdin.readline().split()))
+    tot_dic = Counter(tot_arr)
+    print_num = tot_dic.get(int(sys.stdin.readline()))
+    if print_num is None:
+        sys.stdout.write(f"0")
+    else:
+        sys.stdout.write(f"{print_num}")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -439,4 +451,5 @@ if __name__ == '__main__':
     # string_encode_10930()
     # count_1568()
     # get_num_1236()
-    cal_num_1453()
+    # cal_num_1453()
+    get_num_10807()
