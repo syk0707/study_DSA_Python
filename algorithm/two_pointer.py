@@ -22,6 +22,26 @@ def find_arr_1920():
             sys.stdout.write("0\n")
 
 
+def sum_num_3273():
+    tot_num = int(sys.stdin.readline())
+    tot_arr = list(map(int, sys.stdin.readline().split()))
+    sum_num = int(sys.stdin.readline())
+    tot_arr.sort()
+    left_idx, right_idx = 0, tot_num - 1
+    case_num = 0
+    while left_idx < right_idx:
+        each_sum = tot_arr[left_idx] + tot_arr[right_idx]
+        if each_sum == sum_num:
+            case_num += 1
+        if each_sum < sum_num:
+            left_idx += 1
+            continue
+        right_idx -= 1
+    sys.stdout.write(f"{case_num}")
+
+
 if __name__ == "__main__":
     # join_arr_11728()
-    find_arr_1920()
+    # find_arr_1920()
+    sum_num_3273()
+
