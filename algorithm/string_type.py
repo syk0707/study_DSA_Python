@@ -402,6 +402,14 @@ def num_1264():
         sys.stdout.write(f"{ret_val}\n")
 
 
+def reverse_11365():
+    while True:
+        sentence = sys.stdin.readline().rstrip()
+        if sentence == "END":
+            break
+        sys.stdout.write(f"{''.join(sentence[::-1])}\n")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -428,6 +436,5 @@ if __name__ == "__main__":
     # program_2413("()())(()")
     # string_change_2744()
     # string_8595()
-    num_1264()
-
-
+    # num_1264()
+    reverse_11365()
