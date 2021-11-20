@@ -430,6 +430,20 @@ def sort_11004():
     sys.stdout.write(f"{case_arr[input_arr[1] - 1]}")
 
 
+def sort_11292():
+    while True:
+        input_idx = int(sys.stdin.readline())
+        if input_idx == 0:
+            break;
+        input_dic = {}
+        for idx in range(input_idx):
+            case_input = list(map(str, sys.stdin.readline().split()))
+            if input_dic.get(float(case_input[1])) is None:
+                input_dic[float(case_input[1])] = ""
+            input_dic[float(case_input[1])] += case_input[0] + " "
+        sys.stdout.write(f"{input_dic[sorted(input_dic.keys(), reverse=True)[0]].rstrip()}\n")
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -462,4 +476,5 @@ if __name__ == "__main__":
     # sort_15688()
     # sort_11650()
     # sort_11651()
-    sort_11004()
+    # sort_11004()
+    sort_11292()
