@@ -139,6 +139,31 @@ def get_view_1668():
     sys.stdout.write(f"{left_num}\n{right_num}")
 
 
+def get_num_1145():
+    def lcm(x, y):
+        max_num = 0
+        ret_val = 0
+        if x < y:
+            max_num = y
+        else:
+            max_num = x
+        for idx in range(max_num, (x*y) + 1):
+            if idx % x == 0 and idx % y == 0:
+                ret_val = idx
+                break
+        return ret_val
+    input_arr = list(map(int, sys.stdin.readline().split()))
+    tot_list = itertools.combinations(input_arr, 3)
+    min_num = 0
+    for each_case in tot_list:
+        case_num = lcm(lcm(each_case[0], each_case[1]), each_case[2])
+        if min_num == 0:
+            min_num = case_num
+        elif min_num > case_num:
+            min_num = case_num
+    sys.stdout.write(f"{min_num}\n")
+
+
 if __name__ == "__main__":
     # black_jack_2798()
     # get_num_14914()
@@ -146,4 +171,5 @@ if __name__ == "__main__":
     # cal_zero_7490()
     # get_sum_2309()
     # get_sum_3040()
-    get_view_1668()
+    # get_view_1668()
+    get_num_1145()
