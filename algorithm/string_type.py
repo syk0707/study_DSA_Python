@@ -410,6 +410,24 @@ def reverse_11365():
         sys.stdout.write(f"{''.join(sentence[::-1])}\n")
 
 
+def get_num_10102():
+    tot_num = int(sys.stdin.readline())
+    case_str = sys.stdin.readline().rstrip()
+    a_cnt = 0
+    b_cnt = 0
+    for case_char in case_str:
+        if case_char == "A":
+            a_cnt += 1
+        elif case_char == "B":
+            b_cnt += 1
+    if a_cnt > b_cnt:
+        sys.stdout.write("A")
+    elif b_cnt > a_cnt:
+        sys.stdout.write("B")
+    else:
+        sys.stdout.write("Tie")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -437,4 +455,5 @@ if __name__ == "__main__":
     # string_change_2744()
     # string_8595()
     # num_1264()
-    reverse_11365()
+    # reverse_11365()
+    get_num_10102()
