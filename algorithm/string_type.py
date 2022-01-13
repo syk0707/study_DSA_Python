@@ -428,6 +428,13 @@ def get_num_10102():
         sys.stdout.write("Tie")
 
 
+def string_9086():
+    tot_idx = int(sys.stdin.readline())
+    for idx in range(tot_idx):
+        each_str = sys.stdin.readline().rstrip()
+        sys.stdout.write(f"{each_str[0]}{each_str[len(each_str) - 1]}\n")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -456,4 +463,5 @@ if __name__ == "__main__":
     # string_8595()
     # num_1264()
     # reverse_11365()
-    get_num_10102()
+    # get_num_10102()
+    string_9086()
