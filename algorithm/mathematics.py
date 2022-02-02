@@ -175,6 +175,11 @@ def math_1247():
             sys.stdout.write("0\n")
 
 
+def math_1252():
+    num_arr = list(map(str, sys.stdin.readline().split()))
+    sys.stdout.write(f"{bin(int(num_arr[0], 2) + int(num_arr[1], 2)).replace('0b', '')}")
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
     # get_number_1037()
@@ -191,4 +196,5 @@ if __name__ == "__main__":
     # math_10822()
     # math_1075()
     # math_2587()
-    math_1247()
+    # math_1247()
+    math_1252()
