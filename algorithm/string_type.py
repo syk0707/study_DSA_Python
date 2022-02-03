@@ -435,6 +435,15 @@ def string_9086():
         sys.stdout.write(f"{each_str[0]}{each_str[len(each_str) - 1]}\n")
 
 
+def string_2902():
+    input_str = sys.stdin.readline().rstrip()
+    out_str = ''
+    for each_char in input_str:
+        if each_char.isupper():
+            out_str += each_char
+    sys.stdout.write(f"{out_str}")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -464,4 +473,5 @@ if __name__ == "__main__":
     # num_1264()
     # reverse_11365()
     # get_num_10102()
-    string_9086()
+    # string_9086()
+    string_2902()
