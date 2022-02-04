@@ -444,6 +444,36 @@ def sort_11292():
         sys.stdout.write(f"{input_dic[sorted(input_dic.keys(), reverse=True)[0]].rstrip()}\n")
 
 
+def sort_6996():
+    tot_idx = int(sys.stdin.readline())
+    for idx in range(tot_idx):
+        case_arr = sys.stdin.readline().split()
+        case_0_dic = {}
+        case_1_dic = {}
+        for case_0_char in case_arr[0]:
+            if case_0_dic.get(case_0_char) is None:
+                case_0_dic[case_0_char] = 1
+            else:
+                case_0_dic[case_0_char] += 1
+        for case_1_char in case_arr[1]:
+            if case_1_dic.get(case_1_char) is None:
+                case_1_dic[case_1_char] = 1
+            else:
+                case_1_dic[case_1_char] += 1
+        is_anagram = True
+        if len(case_arr[0]) > len(case_arr[1]):
+            is_anagram = False
+        else:
+            for case_1_key in case_1_dic.keys():
+                if case_0_dic.get(case_1_key) is None or case_1_dic[case_1_key] > case_0_dic[case_1_key]:
+                    is_anagram = False
+                    break
+        if is_anagram:
+            sys.stdout.write(f"{case_arr[0]} & {case_arr[1]} are anagrams.\n")
+        else:
+            sys.stdout.write(f"{case_arr[0]} & {case_arr[1]} are NOT anagrams.\n")
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -477,4 +507,5 @@ if __name__ == "__main__":
     # sort_11650()
     # sort_11651()
     # sort_11004()
-    sort_11292()
+    # sort_11292()
+    sort_6996()
