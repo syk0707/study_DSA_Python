@@ -180,6 +180,26 @@ def math_1252():
     sys.stdout.write(f"{bin(int(num_arr[0], 2) + int(num_arr[1], 2)).replace('0b', '')}")
 
 
+def math_5355():
+    tot_num = int(sys.stdin.readline())
+    for idx in range(tot_num):
+        tot_case = list(map(str, sys.stdin.readline().split()))
+        is_num = True
+        case_sum = 0
+        for each_case in tot_case:
+            if is_num:
+                case_sum = float(each_case)
+                is_num = False
+            elif each_case == '@':
+                case_sum = case_sum * 3
+            elif each_case == '%':
+                case_sum = case_sum + 5
+            elif each_case == '#':
+                case_sum = case_sum - 7
+        print_str = "{:.2f}".format(case_sum)
+        sys.stdout.write(f"{print_str}\n")
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
     # get_number_1037()
@@ -197,4 +217,5 @@ if __name__ == "__main__":
     # math_1075()
     # math_2587()
     # math_1247()
-    math_1252()
+    # math_1252()
+    math_5355()
