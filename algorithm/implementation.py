@@ -423,6 +423,18 @@ def get_num_10807():
         sys.stdout.write(f"{print_num}")
 
 
+def arrange_3047():
+    tot_arr = list(map(int, sys.stdin.readline().split()))
+    tot_dic = {}
+    tot_arr.sort()
+    tot_dic["A"] = tot_arr[0]
+    tot_dic["B"] = tot_arr[1]
+    tot_dic["C"] = tot_arr[2]
+    print_case = sys.stdin.readline().rstrip()
+    for case_char in print_case:
+        sys.stdout.write(f"{tot_dic[case_char]} ")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -452,4 +464,5 @@ if __name__ == '__main__':
     # count_1568()
     # get_num_1236()
     # cal_num_1453()
-    get_num_10807()
+    # get_num_10807()
+    arrange_3047()
