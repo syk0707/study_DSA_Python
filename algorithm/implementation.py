@@ -435,6 +435,16 @@ def arrange_3047():
         sys.stdout.write(f"{tot_dic[case_char]} ")
 
 
+def check_num_5597():
+    tot_dic = {}
+    for idx in range(30):
+        tot_dic[idx + 1] = 1
+    for case_idx in range(28):
+        tot_dic.pop(int(sys.stdin.readline()))
+    for each_key in tot_dic.keys():
+        sys.stdout.write(f"{each_key}\n")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -465,4 +475,5 @@ if __name__ == '__main__':
     # get_num_1236()
     # cal_num_1453()
     # get_num_10807()
-    arrange_3047()
+    # arrange_3047()
+    check_num_5597()
