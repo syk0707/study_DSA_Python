@@ -444,6 +444,25 @@ def string_2902():
     sys.stdout.write(f"{out_str}")
 
 
+def string_9046():
+    tot_idx = int(sys.stdin.readline())
+    for idx in range(tot_idx):
+        case_sentence = sys.stdin.readline().rstrip()
+        case_dic = {}
+        for case_char in case_sentence:
+            if case_char == ' ':
+                continue
+            elif case_dic.get(case_char) is not None:
+                case_dic[case_char] += 1
+            else:
+                case_dic[case_char] = 1
+        sorted_tuple = sorted(case_dic.items(), key=lambda kv: kv[1], reverse=True)
+        if len(sorted_tuple) == 1 or sorted_tuple[0][1] != sorted_tuple[1][1]:
+            sys.stdout.write(f"{sorted_tuple[0][0]}\n")
+        else:
+            sys.stdout.write("?\n")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -474,4 +493,5 @@ if __name__ == "__main__":
     # reverse_11365()
     # get_num_10102()
     # string_9086()
-    string_2902()
+    # string_2902()
+    string_9046()
