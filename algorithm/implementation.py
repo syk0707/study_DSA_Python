@@ -445,6 +445,17 @@ def check_num_5597():
         sys.stdout.write(f"{each_key}\n")
 
 
+def reverse_convert_13235():
+    input_str = sys.stdin.readline().rstrip()
+    reverse_str = ''
+    for input_char in input_str:
+        reverse_str = input_char + reverse_str
+    if input_str == reverse_str:
+        sys.stdout.write("true")
+    else:
+        sys.stdout.write("false")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -476,4 +487,5 @@ if __name__ == '__main__':
     # cal_num_1453()
     # get_num_10807()
     # arrange_3047()
-    check_num_5597()
+    # check_num_5597()
+    reverse_convert_13235()
