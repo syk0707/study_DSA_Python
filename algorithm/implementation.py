@@ -456,6 +456,17 @@ def reverse_convert_13235():
         sys.stdout.write("false")
 
 
+def print_num_10093():
+    input_arr = list(map(int, sys.stdin.readline().split()))
+    input_arr.sort()
+    if input_arr[1] - input_arr[0] < 2:
+        sys.stdout.write("0\n")
+    else:
+        sys.stdout.write(f"{input_arr[1] - input_arr[0] - 1}\n")
+    for num in range(input_arr[0] + 1, input_arr[1]):
+        sys.stdout.write(f"{num} ")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -488,4 +499,5 @@ if __name__ == '__main__':
     # get_num_10807()
     # arrange_3047()
     # check_num_5597()
-    reverse_convert_13235()
+    # reverse_convert_13235()
+    print_num_10093()
