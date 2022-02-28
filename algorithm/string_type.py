@@ -463,6 +463,15 @@ def string_9046():
             sys.stdout.write("?\n")
 
 
+def check_string_4999():
+    check_str = sys.stdin.readline().rstrip()
+    test_str = sys.stdin.readline().rstrip()
+    if check_str.find(test_str) == -1:
+        sys.stdout.write("no")
+    else:
+        sys.stdout.write("go")
+
+
 if __name__ == "__main__":
     # chk_palindrome_10988()
     # print_11718()
@@ -494,4 +503,5 @@ if __name__ == "__main__":
     # get_num_10102()
     # string_9086()
     # string_2902()
-    string_9046()
+    # string_9046()
+    check_string_4999()
