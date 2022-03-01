@@ -154,6 +154,23 @@ def prog_42883():
     return "".join(arr)
 
 
+def greedy_14659():
+    case_idx = int(sys.stdin.readline())
+    tot_arr = list(map(int, sys.stdin.readline().split()))
+    max_num = 0
+    enemy_num = 0
+    enemy_num_arr = []
+    for num in tot_arr:
+        if num > max_num:
+            max_num = num
+            enemy_num_arr.append(enemy_num)
+            enemy_num = 0
+        else:
+            enemy_num += 1
+    enemy_num_arr.append(enemy_num)
+    sys.stdout.write(f"{max(enemy_num_arr)}")
+
+
 if __name__ == "__main__":
     # cal_2720()
     # cal_16435()
@@ -162,4 +179,5 @@ if __name__ == "__main__":
     # greedy_11399()
     # greedy_5585()
     # search_1543()
-    prog_42883()
+    # prog_42883()
+    greedy_14659()
