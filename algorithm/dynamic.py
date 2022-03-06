@@ -1,3 +1,5 @@
+import itertools
+import string
 import sys
 
 
@@ -154,6 +156,30 @@ def fibonacci_4150():
     sys.stdout.write(f"{total}")
 
 
+def dynamic_15312():
+    alphabet_strokes = [3, 2, 1, 2, 3, 3, 2, 3, 3, 2, 2, 1, 2, 2, 1, 2, 2, 2, 1, 2, 1, 1, 1, 2, 2, 1]
+    alphabet_list = list(string.ascii_uppercase)
+    case_dict = {}
+    for idx in range(len(alphabet_list)):
+        case_dict[alphabet_list[idx]] = alphabet_strokes[idx]
+    # sys.stdout.write(f"{case_dict}\n")
+    first_str = sys.stdin.readline().rstrip()
+    second_str = sys.stdin.readline().rstrip()
+    chk_str = ''.join(list(itertools.chain(*zip(first_str, second_str))))
+    chk_arr = []
+    for chk_char in chk_str:
+        chk_arr.append(case_dict.get(chk_char))
+    # sys.stdout.write(f"{chk_arr}")
+    while True:
+        change_arr = []
+        for idx in range(len(chk_arr) - 1):
+            change_arr.append((chk_arr[idx] + chk_arr[idx + 1]) % 10)
+        chk_arr = change_arr
+        if len(chk_arr) == 2:
+            break
+    sys.stdout.write(f"{chk_arr[0]}{chk_arr[1]}")
+
+
 if __name__ == "__main__":
     # print(recursive_fibonacci(4))
     # print(dynamic_fibonacci(5))
@@ -164,4 +190,5 @@ if __name__ == "__main__":
     # add_num_9095()
     # fibonacci_2747()
     # fibonacci_10826()
-    fibonacci_4150()
+    # fibonacci_4150()
+    dynamic_15312()
