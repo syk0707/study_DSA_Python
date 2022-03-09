@@ -200,6 +200,22 @@ def math_5355():
         sys.stdout.write(f"{print_str}\n")
 
 
+def cal_10886():
+    tot_idx = int(sys.stdin.readline())
+    sum_0 = 0
+    sum_1 = 0
+    for idx in range(tot_idx):
+        case_num = int(sys.stdin.readline())
+        if case_num == 0:
+            sum_0 += 1
+        else:
+            sum_1 += 1
+    if sum_1 > sum_0:
+        sys.stdout.write("Junhee is cute!")
+    else:
+        sys.stdout.write("Junhee is not cute!")
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
     # get_number_1037()
@@ -218,4 +234,5 @@ if __name__ == "__main__":
     # math_2587()
     # math_1247()
     # math_1252()
-    math_5355()
+    # math_5355()
+    cal_10886()
