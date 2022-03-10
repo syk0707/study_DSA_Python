@@ -216,6 +216,15 @@ def cal_10886():
         sys.stdout.write("Junhee is not cute!")
 
 
+def math_1834():
+    divide_num = int(sys.stdin.readline())
+    tot_arr = []
+    for num in range(divide_num):
+        cal_num = divide_num * num + num
+        tot_arr.append(cal_num)
+    sys.stdout.write(f"{sum(tot_arr)}")
+
+
 if __name__ == "__main__":
     # strange_multiplication_1225()
     # get_number_1037()
@@ -235,4 +244,5 @@ if __name__ == "__main__":
     # math_1247()
     # math_1252()
     # math_5355()
-    cal_10886()
+    # cal_10886()
+    math_1834()
