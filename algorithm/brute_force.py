@@ -164,6 +164,23 @@ def get_num_1145():
     sys.stdout.write(f"{min_num}\n")
 
 
+def cal_num_2851():
+    tot_num = 0
+    tot_arr = []
+    for idx in range(10):
+        tot_arr.append(int(sys.stdin.readline()))
+    for case_num in tot_arr:
+        compare_num = tot_num + case_num
+        if compare_num >= 100 and compare_num - 100 <= 100 - tot_num:
+            tot_num = compare_num
+            break
+        elif compare_num >= 100:
+            break
+        else:
+            tot_num += case_num
+    sys.stdout.write(f"{tot_num}")
+
+
 if __name__ == "__main__":
     # black_jack_2798()
     # get_num_14914()
@@ -172,4 +189,5 @@ if __name__ == "__main__":
     # get_sum_2309()
     # get_sum_3040()
     # get_view_1668()
-    get_num_1145()
+    # get_num_1145()
+    cal_num_2851()
