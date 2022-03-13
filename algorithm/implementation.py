@@ -467,6 +467,12 @@ def print_num_10093():
         sys.stdout.write(f"{num} ")
 
 
+def print_star_2440():
+    tot_num = int(sys.stdin.readline())
+    for num in range(tot_num, 0, -1):
+        sys.stdout.write(f"{num * '*'}\n")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -500,4 +506,5 @@ if __name__ == '__main__':
     # arrange_3047()
     # check_num_5597()
     # reverse_convert_13235()
-    print_num_10093()
+    # print_num_10093()
+    print_star_2440()
