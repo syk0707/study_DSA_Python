@@ -473,6 +473,31 @@ def print_star_2440():
         sys.stdout.write(f"{num * '*'}\n")
 
 
+def cal_num_11637():
+    tot_idx = int(sys.stdin.readline())
+    for idx in range(tot_idx):
+        case_tot_idx = int(sys.stdin.readline())
+        tot_sum = 0
+        max_num = 0
+        max_idx = 0
+        has_winner = True
+        for case_idx in range(case_tot_idx):
+            each_num = int(sys.stdin.readline())
+            tot_sum += each_num
+            if each_num > max_num:
+                max_num = each_num
+                max_idx = case_idx
+                has_winner = True
+            elif each_num == max_num:
+                has_winner = False
+        if has_winner is False:
+            sys.stdout.write(f"no winner\n")
+        elif tot_sum / 2 < max_num:
+            sys.stdout.write(f"majority winner {max_idx + 1}\n")
+        else:
+            sys.stdout.write(f"minority winner {max_idx + 1}\n")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -507,4 +532,5 @@ if __name__ == '__main__':
     # check_num_5597()
     # reverse_convert_13235()
     # print_num_10093()
-    print_star_2440()
+    # print_star_2440()
+    cal_num_11637()
