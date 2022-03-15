@@ -1,4 +1,5 @@
 import collections
+import numpy
 import sys
 import heapq
 
@@ -90,7 +91,19 @@ def heap_11279():
                     max_num = 0
 
 
+def queue_16466():
+    tot_num = int(sys.stdin.readline())
+    tot_arr = [i + 1 for i in range(tot_num + 1)]
+    tot_dic = {key: 1 for key in tot_arr}
+    case_arr = list(map(int, sys.stdin.readline().split()))
+    for case_num in case_arr:
+        if tot_dic.get(case_num):
+            tot_dic.pop(case_num)
+    sys.stdout.write(f"{next(iter(tot_dic))}")
+
+
 if __name__ == "__main__":
     # queue_10845()
     # dequeue_10866()
-    heap_11279()
+    # heap_11279()
+    queue_16466()
