@@ -4,6 +4,7 @@ hash_table = list([0 for i in range(8)])
 
 
 def get_key(data):
+    test = sys.stdin.readline()
     return hash(data)
 
 
