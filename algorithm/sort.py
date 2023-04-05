@@ -326,6 +326,154 @@ def sort_16212():
     sys.stdout.write(f"{' '.join(str(i) for i in each_arr)}")
 
 
+def sort_10867():
+    tot_case = int(sys.stdin.readline())
+    tot_arr = list(map(int, sys.stdin.readline().split()))
+    tot_dic = {}
+    for num in tot_arr:
+        if tot_dic.get(num) is None:
+            tot_dic[num] = 1
+    sys.stdout.write(f"{' '.join(str(i) for i in sorted(tot_dic.keys()))}")
+
+
+def sort_reverse_11931():
+    tot_case = int(sys.stdin.readline())
+    tot_arr = []
+    for idx in range(tot_case):
+        tot_arr.append(int(sys.stdin.readline()))
+    tot_arr.sort(reverse=True)
+    sys.stdout.write("\n".join(str(i) for i in tot_arr))
+
+
+def sort_10989():
+    tot_val = {}
+    tot_idx = int(sys.stdin.readline())
+    for idx in range(tot_idx):
+        each_num = int(sys.stdin.readline())
+        if tot_val.get(each_num) is None:
+            tot_val[each_num] = 1
+        else:
+            tot_val[each_num] += 1
+    for key in sorted(tot_val):
+        for val in range(tot_val[key]):
+            sys.stdout.write(f"{key}\n")
+
+
+def sort_1181():
+    tot_idx = int(sys.stdin.readline())
+    input_dic = {}
+    for idx in range(tot_idx):
+        input_word = sys.stdin.readline()
+        len_word = len(input_word)
+        if input_dic.get(len_word) is None:
+            input_dic[len_word] = {}
+        input_dic[len_word][input_word] = 1
+    for key_dic in sorted(input_dic.keys()):
+        for output_word in sorted(input_dic[key_dic].keys()):
+            sys.stdout.write(f"{output_word}")
+
+
+def prog_sort_2540(people, limit):
+    answer = 0
+    people.sort()
+    start, end = 0, len(people) - 1
+
+    while start <= end:
+        answer += 1
+        if people[start] + people[end] <= limit:
+            start += 1
+        end -= 1
+    return answer
+
+
+def sort_15688():
+    tot_idx = int(sys.stdin.readline())
+    input_arr = []
+    for idx in range(tot_idx):
+        input_arr.append(int(sys.stdin.readline()))
+    input_arr.sort()
+    print("\n".join(map(str, input_arr)))
+
+
+def sort_11650():
+    tot_idx = int(sys.stdin.readline())
+    input_dic = {}
+    for idx in range(tot_idx):
+        each_num = list(map(int, sys.stdin.readline().split()))
+        if input_dic.get(each_num[0]) is None:
+            input_dic[each_num[0]] = [each_num[1]]
+        else:
+            input_dic[each_num[0]].append(each_num[1])
+    for each_key in sorted(input_dic):
+        for each_val in sorted(input_dic[each_key]):
+            sys.stdout.write(f"{each_key} {each_val}\n")
+
+
+def sort_11651():
+    tot_idx = int(sys.stdin.readline())
+    tot_dic = {}
+    for idx in range(tot_idx):
+        each_arr = list(map(int, sys.stdin.readline().split()))
+        if tot_dic.get(each_arr[1]) is None:
+            tot_dic[each_arr[1]] = [each_arr[0]]
+        else:
+            tot_dic[each_arr[1]].append(each_arr[0])
+    for each_key in sorted(tot_dic.keys()):
+        for num in sorted(tot_dic[each_key]):
+            sys.stdout.write(f"{num} {each_key}\n")
+
+
+def sort_11004():
+    input_arr = list(map(int, sys.stdin.readline().rstrip().split()))
+    case_arr = list(map(int, sys.stdin.readline().rstrip().split()))
+    case_arr = sorted(case_arr)
+    sys.stdout.write(f"{case_arr[input_arr[1] - 1]}")
+
+
+def sort_11292():
+    while True:
+        input_idx = int(sys.stdin.readline())
+        if input_idx == 0:
+            break;
+        input_dic = {}
+        for idx in range(input_idx):
+            case_input = list(map(str, sys.stdin.readline().split()))
+            if input_dic.get(float(case_input[1])) is None:
+                input_dic[float(case_input[1])] = ""
+            input_dic[float(case_input[1])] += case_input[0] + " "
+        sys.stdout.write(f"{input_dic[sorted(input_dic.keys(), reverse=True)[0]].rstrip()}\n")
+
+
+def sort_6996():
+    tot_idx = int(sys.stdin.readline())
+    for idx in range(tot_idx):
+        case_arr = sys.stdin.readline().split()
+        case_0_dic = {}
+        case_1_dic = {}
+        for case_0_char in case_arr[0]:
+            if case_0_dic.get(case_0_char) is None:
+                case_0_dic[case_0_char] = 1
+            else:
+                case_0_dic[case_0_char] += 1
+        for case_1_char in case_arr[1]:
+            if case_1_dic.get(case_1_char) is None:
+                case_1_dic[case_1_char] = 1
+            else:
+                case_1_dic[case_1_char] += 1
+        is_anagram = True
+        if len(case_arr[0]) > len(case_arr[1]):
+            is_anagram = False
+        else:
+            for case_1_key in case_1_dic.keys():
+                if case_0_dic.get(case_1_key) is None or case_1_dic[case_1_key] > case_0_dic[case_1_key]:
+                    is_anagram = False
+                    break
+        if is_anagram:
+            sys.stdout.write(f"{case_arr[0]} & {case_arr[1]} are anagrams.\n")
+        else:
+            sys.stdout.write(f"{case_arr[0]} & {case_arr[1]} are NOT anagrams.\n")
+
+
 if __name__ == "__main__":
     # random_list = random.sample(range(100), 10)
     # array_num()
@@ -349,4 +497,15 @@ if __name__ == "__main__":
     # sort_15819()
     # sort_15969()
     # sort_check_11536()
-    sort_16212()
+    # sort_16212()
+    # sort_10867()
+    # sort_reverse_11931()
+    # sort_10989()
+    # sort_1181()
+    # prog_sort_2540([70, 80, 50], 100)
+    # sort_15688()
+    # sort_11650()
+    # sort_11651()
+    # sort_11004()
+    # sort_11292()
+    sort_6996()

@@ -1,5 +1,9 @@
 import sys
 import math
+import string
+import calendar
+import hashlib
+from collections import Counter
 
 
 def rectangles_15232():
@@ -265,6 +269,235 @@ def add_1357():
     sys.stdout.write(f"{int(str(first_reverse_num + second_reverse_num)[::-1])}")
 
 
+def print_11586():
+    total_num = int(sys.stdin.readline())
+    tot_arr = []
+    for idx in range(total_num):
+        tot_arr.append(sys.stdin.readline().rstrip())
+    case_num = int(sys.stdin.readline())
+    if case_num == 3:
+        for sentence in reversed(tot_arr):
+            sys.stdout.write(f"{sentence}\n")
+    elif case_num == 1:
+        for sentence in tot_arr:
+            sys.stdout.write(f"{sentence}\n")
+    elif case_num == 2:
+        for sentence in tot_arr:
+            sys.stdout.write(f"{''.join(reversed(sentence))}\n")
+
+
+def add_2729():
+    tot_case = int(sys.stdin.readline())
+    for idx in range(tot_case):
+        case_arr = list(map(int, sys.stdin.readline().split()))
+        first_num = "0b" + str(case_arr[0])
+        second_num = "0b" + str(case_arr[1])
+        sys.stdout.write(f"{'{0:b}'.format(int(first_num, 2) + int(second_num, 2))}\n")
+
+
+def change_num(number, notation):
+    notation_array = string.digits + string.ascii_uppercase
+    ret_val = ''
+    while number > 0:
+        number, mod = divmod(number, notation)
+        str_mod = notation_array[mod]
+        ret_val += str_mod
+    return ret_val[::-1]
+
+
+def change_11005():
+    case_arr = list(map(int, sys.stdin.readline().split()))
+    sys.stdout.write(f"{change_num(case_arr[0], case_arr[1])}")
+
+
+def cal_1924():
+    check_day = list(map(int, sys.stdin.readline().split()))
+    day_num = calendar.weekday(2007, check_day[0], check_day[1])
+    if day_num == 6:
+        sys.stdout.write("SUN")
+    elif day_num == 0:
+        sys.stdout.write("MON")
+    elif day_num == 1:
+        sys.stdout.write("TUE")
+    elif day_num == 2:
+        sys.stdout.write("WED")
+    elif day_num == 3:
+        sys.stdout.write("THU")
+    elif day_num == 4:
+        sys.stdout.write("FRI")
+    elif day_num == 5:
+        sys.stdout.write("SAT")
+
+
+def string_11655():
+    sentence = sys.stdin.readline()
+    ret_sentence = ''
+    for character in sentence:
+        ascii_num = ord(character)
+        if 65 <= ascii_num <= 77 or 97 <= ascii_num <= 109:
+            ret_sentence += chr(ascii_num + 13)
+        elif 78 <= ascii_num <= 90:
+            ret_sentence += chr(65 + (13 - (90 - ascii_num) - 1))
+        elif 110 <= ascii_num <= 122:
+            ret_sentence += chr(97 + (13 - (122 - ascii_num) - 1))
+        else:
+            ret_sentence += character
+    sys.stdout.write(f"{ret_sentence}")
+
+
+def string_10808():
+    input_word = sys.stdin.readline().rstrip()
+    input_dict = {}
+    for each_num in range(97, 123):
+        input_dict[each_num] = 0
+    for each_word in input_word:
+        ascii_num = ord(each_word)
+        input_dict[ascii_num] += 1
+    for each_val in input_dict.values():
+        sys.stdout.write(f"{each_val} ")
+
+
+def string_encode_10930():
+    input_str = sys.stdin.readline().rstrip()
+    ret_hash = hashlib.sha256(input_str.encode())
+    sys.stdout.write(f"{ret_hash.hexdigest()}")
+
+
+def count_1568():
+    input_num = int(sys.stdin.readline())
+    add_num = 0
+    tot_num = 0
+    tot_sec = 0
+    while True:
+        if input_num <= tot_num:
+            break
+        add_num += 1
+        tot_sec += 1
+        if add_num > input_num - tot_num:
+            add_num = 1
+        tot_num += add_num
+    sys.stdout.write(f"{tot_sec}\n")
+
+
+def get_num_1236():
+    input_arr = list(map(int, sys.stdin.readline().split()))
+    ret_num = 0
+    vertical_dic = {i + 1: 0 for i in range(input_arr[1])}
+    for idx in range(input_arr[0]):
+        line_str = sys.stdin.readline()
+        # 가로
+        if line_str.find("X") == -1:
+            ret_num += 1
+        v_idx = 0
+        # 세로
+        while v_idx > -1:
+            v_idx = line_str.find('X', v_idx)
+            if vertical_dic.get(v_idx + 1) is not None:
+                del vertical_dic[v_idx + 1]
+            if v_idx > -1:
+                v_idx += 1
+    sys.stdout.write(f"{max(ret_num, len(vertical_dic.keys()))}")
+
+
+def cal_num_1453():
+    input_num = int(sys.stdin.readline())
+    input_arr = list(map(int, sys.stdin.readline().split()))
+    input_dic = {}
+    except_num = 0
+    for num in input_arr:
+        if input_dic.get(num) is None:
+            input_dic[num] = 1
+        else:
+            except_num += 1
+    sys.stdout.write(f"{except_num}")
+
+
+def get_num_10807():
+    tot_num = int(sys.stdin.readline())
+    tot_arr = list(map(int, sys.stdin.readline().split()))
+    tot_dic = Counter(tot_arr)
+    print_num = tot_dic.get(int(sys.stdin.readline()))
+    if print_num is None:
+        sys.stdout.write(f"0")
+    else:
+        sys.stdout.write(f"{print_num}")
+
+
+def arrange_3047():
+    tot_arr = list(map(int, sys.stdin.readline().split()))
+    tot_dic = {}
+    tot_arr.sort()
+    tot_dic["A"] = tot_arr[0]
+    tot_dic["B"] = tot_arr[1]
+    tot_dic["C"] = tot_arr[2]
+    print_case = sys.stdin.readline().rstrip()
+    for case_char in print_case:
+        sys.stdout.write(f"{tot_dic[case_char]} ")
+
+
+def check_num_5597():
+    tot_dic = {}
+    for idx in range(30):
+        tot_dic[idx + 1] = 1
+    for case_idx in range(28):
+        tot_dic.pop(int(sys.stdin.readline()))
+    for each_key in tot_dic.keys():
+        sys.stdout.write(f"{each_key}\n")
+
+
+def reverse_convert_13235():
+    input_str = sys.stdin.readline().rstrip()
+    reverse_str = ''
+    for input_char in input_str:
+        reverse_str = input_char + reverse_str
+    if input_str == reverse_str:
+        sys.stdout.write("true")
+    else:
+        sys.stdout.write("false")
+
+
+def print_num_10093():
+    input_arr = list(map(int, sys.stdin.readline().split()))
+    input_arr.sort()
+    if input_arr[1] - input_arr[0] < 2:
+        sys.stdout.write("0\n")
+    else:
+        sys.stdout.write(f"{input_arr[1] - input_arr[0] - 1}\n")
+    for num in range(input_arr[0] + 1, input_arr[1]):
+        sys.stdout.write(f"{num} ")
+
+
+def print_star_2440():
+    tot_num = int(sys.stdin.readline())
+    for num in range(tot_num, 0, -1):
+        sys.stdout.write(f"{num * '*'}\n")
+
+
+def cal_num_11637():
+    tot_idx = int(sys.stdin.readline())
+    for idx in range(tot_idx):
+        case_tot_idx = int(sys.stdin.readline())
+        tot_sum = 0
+        max_num = 0
+        max_idx = 0
+        has_winner = True
+        for case_idx in range(case_tot_idx):
+            each_num = int(sys.stdin.readline())
+            tot_sum += each_num
+            if each_num > max_num:
+                max_num = each_num
+                max_idx = case_idx
+                has_winner = True
+            elif each_num == max_num:
+                has_winner = False
+        if has_winner is False:
+            sys.stdout.write(f"no winner\n")
+        elif tot_sum / 2 < max_num:
+            sys.stdout.write(f"majority winner {max_idx + 1}\n")
+        else:
+            sys.stdout.write(f"minority winner {max_idx + 1}\n")
+
+
 if __name__ == '__main__':
     # rectangles_15232()
     # freq_num_14912()
@@ -283,4 +516,21 @@ if __name__ == '__main__':
     # large_num_check_10570()
     # num_check_10797()
     # round_2033()
-    add_1357()
+    # add_1357()
+    # print_11586()
+    # add_2729()
+    # change_11005()
+    # cal_1924()
+    # string_11655()
+    # string_10808()
+    # string_encode_10930()
+    # count_1568()
+    # get_num_1236()
+    # cal_num_1453()
+    # get_num_10807()
+    # arrange_3047()
+    # check_num_5597()
+    # reverse_convert_13235()
+    # print_num_10093()
+    # print_star_2440()
+    cal_num_11637()

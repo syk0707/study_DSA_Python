@@ -402,6 +402,11 @@ def get_lcm_gcd_2609():
     sys.stdout.write(f"{math.lcm(tot_arr[0], tot_arr[1])}")
 
 
+def change_1212():
+    cal_num = "0o" + sys.stdin.readline()
+    print("{0:b}".format(int(cal_num, 8)))
+
+
 if __name__ == "__main__":
     # break_even_point()
     # check_num()
@@ -436,4 +441,5 @@ if __name__ == "__main__":
     # cal_avg_5691()
     # get_lcm_gcd_2702()
     # get_gcd_9417()
-    get_lcm_gcd_2609()
+    # get_lcm_gcd_2609()
+    change_1212()

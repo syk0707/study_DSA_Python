@@ -1,4 +1,6 @@
 import sys
+import copy
+import itertools
 
 
 def black_jack_2798():
@@ -43,7 +45,149 @@ def get_num_2501():
         sys.stdout.write(f"{ans_arr[case_arr[1] - 1]}")
 
 
+def cal_zero_7490():
+    tot_idx = int(sys.stdin.readline())
+    tot_list = []
+
+    def recursive_cal(arr, n):
+        if len(arr) == n:
+            tot_list.append(copy.deepcopy(arr))
+            return
+        arr.append(' ')
+        recursive_cal(arr, n)
+        arr.pop()
+
+        arr.append('+')
+        recursive_cal(arr, n)
+        arr.pop()
+
+        arr.append('-')
+        recursive_cal(arr, n)
+        arr.pop()
+
+    for idx in range(tot_idx):
+        tot_list = []
+        num = int(sys.stdin.readline())
+        recursive_cal([], num - 1)
+
+        num_list = [i for i in range(1, num + 1)]
+
+        for each_case in tot_list:
+            print_str = ""
+            for i in range(num - 1):
+                print_str += str(num_list[i]) + each_case[i]
+            print_str += str(num_list[-1])
+            if eval(print_str.replace(" ", "")) == 0:
+                sys.stdout.write(f"{print_str}\n")
+            sys.stdout.write(f"\n")
+
+
+def get_sum_2309():
+    tot_arr = []
+    idx_arr = list(itertools.combinations([i for i in range(9)], 7))
+    is_get_case = False
+    for idx in range(9):
+        tot_arr.append(int(sys.stdin.readline()))
+    for each_case in idx_arr:
+        sum_num = 0
+        case_arr = []
+        for idx in each_case:
+            sum_num += tot_arr[idx]
+            case_arr.append(tot_arr[idx])
+        if sum_num == 100:
+            break
+    case_arr.sort()
+    for each_num in case_arr:
+        sys.stdout.write(f"{each_num}\n")
+
+
+def get_sum_3040():
+    tot_arr = []
+    idx_arr = list(itertools.combinations([i for i in range(9)], 7))
+    for idx in range(9):
+        tot_arr.append(int(sys.stdin.readline()))
+    for each_case in idx_arr:
+        sum_num = 0
+        case_arr = []
+        for idx in each_case:
+            sum_num += tot_arr[idx]
+            case_arr.append(tot_arr[idx])
+        if sum_num == 100:
+            break
+    for each_num in case_arr:
+        sys.stdout.write(f"{each_num}\n")
+
+
+def get_view_1668():
+    tot_idx = int(sys.stdin.readline())
+    case_arr = []
+    left_num = 1
+    right_num = 1
+    for idx in range(tot_idx):
+        case_arr.append(int(sys.stdin.readline()))
+        if idx == 0:
+            first_num = case_arr[0]
+        if idx >= 1 and case_arr[idx] > first_num:
+            left_num += 1
+            first_num = case_arr[idx]
+    case_arr.reverse()
+    first_num = case_arr[0]
+    for case_idx in range(tot_idx):
+        if case_idx >= 1 and case_arr[case_idx] > first_num:
+            right_num += 1
+            first_num = case_arr[case_idx]
+    sys.stdout.write(f"{left_num}\n{right_num}")
+
+
+def get_num_1145():
+    def lcm(x, y):
+        max_num = 0
+        ret_val = 0
+        if x < y:
+            max_num = y
+        else:
+            max_num = x
+        for idx in range(max_num, (x*y) + 1):
+            if idx % x == 0 and idx % y == 0:
+                ret_val = idx
+                break
+        return ret_val
+    input_arr = list(map(int, sys.stdin.readline().split()))
+    tot_list = itertools.combinations(input_arr, 3)
+    min_num = 0
+    for each_case in tot_list:
+        case_num = lcm(lcm(each_case[0], each_case[1]), each_case[2])
+        if min_num == 0:
+            min_num = case_num
+        elif min_num > case_num:
+            min_num = case_num
+    sys.stdout.write(f"{min_num}\n")
+
+
+def cal_num_2851():
+    tot_num = 0
+    tot_arr = []
+    for idx in range(10):
+        tot_arr.append(int(sys.stdin.readline()))
+    for case_num in tot_arr:
+        compare_num = tot_num + case_num
+        if compare_num >= 100 and compare_num - 100 <= 100 - tot_num:
+            tot_num = compare_num
+            break
+        elif compare_num >= 100:
+            break
+        else:
+            tot_num += case_num
+    sys.stdout.write(f"{tot_num}")
+
+
 if __name__ == "__main__":
     # black_jack_2798()
     # get_num_14914()
-    get_num_2501()
+    # get_num_2501()
+    # cal_zero_7490()
+    # get_sum_2309()
+    # get_sum_3040()
+    # get_view_1668()
+    # get_num_1145()
+    cal_num_2851()
